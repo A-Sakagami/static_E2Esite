@@ -1,5 +1,5 @@
 ---
-title: "xxx"
+title: "new post"
 date: 2025-01-06T12:18:21+09:00
 draft: true
 categories: [""]
