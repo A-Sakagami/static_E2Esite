@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ .Site.Title }}</title>
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
+    <meta name="description" content="{{ .Params.description }}">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Welcome to {{ .Site.Title }}</h1>
-    {{ range .Pages }}
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ end }}
-</body>
-</html>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about/">このサイトについて</a></li>
+          <li><a href="/login/">ログイン</a></li>
+        </ul>
+      </nav>
+      <h1>{{ .Title }}</h1>
+    </header>
+  
+    <main>
+      <article>
+        {{ .Content }}
+      </article>
+    </main>
+  
+    <footer>
+      <p>© 2024 My Hugo Site</p>
+    </footer>
+  </body>
+  </html>

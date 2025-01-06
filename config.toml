@@ -6,5 +6,26 @@ languageCode = 'ja-jp'
 title = '業務連絡フロー'
 publishDir = 'public'
 
-[permalinks]
-posts = "/posts/:slug/"
+# メタ情報
+[params]
+  description = "Hugoで作成したシンプルなウェブサイト"
+  author = "A-Sakagami"
+  github = "https://github.com/A-Sakagami/"
+  showHeader = true
+
+# メニューの設定
+[menu]
+  [[menu.main]]
+    name = "ホーム"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "このサイトについて"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "ログイン"
+    url = "/login/"
+    weight = 3
