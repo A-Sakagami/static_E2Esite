@@ -7,9 +7,9 @@ window.addEventListener('message', function(event) {
     const authLink = document.getElementById('authLink');
 
     if (authData.isLoggedIn) {
-      authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/logout/">ログアウト</a>';
+      authLink.innerHTML = '<a href="{{ .Site.BaseURL }}login/">ログイン</a>';
     } else {
-      authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/login/">ログイン</a>';
+      authLink.innerHTML = '<a href="{{ .Site.BaseURL }}logout/">ログアウト</a>';
     }
   });
 
