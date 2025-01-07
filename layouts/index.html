@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <title>{{ .Title }}</title>
     <meta name="description" content="{{ .Params.description }}">
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="{{ .Site.BaseURL }}css/style.css " rel="stylesheet">
 </head>
 <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/">ホーム</a></li>
-          <li><a href="/about/">このサイトについて</a></li>
-          <li><a href="/login/">ログイン</a></li>
+      <nav style="float: right;">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
+          <li><a href="{{ .Site.BaseURL }}/">ホーム</a></li>
+          <li><a href="{{ .Site.BaseURL }}/about/">このサイトについて</a></li>
+          <li><a href="{{ .Site.BaseURL }}/login/">ログイン</a></li>
         </ul>
       </nav>
-      <h1>{{ .Title }}</h1>
+      <h1 style="text-align: center;">{{ .Title }}</h1>
     </header>
   
     <main>
       <article>
         {{ .Content }}
+        <iframe id="authFrame" src="auth.html" style="display:none;"></iframe>
+        <div id="authButtons">
+          <!-- ボタンはJavaScriptで動的に追加されます -->
+        </div>
       </article>
     </main>
   
@@ -29,3 +33,6 @@
     </footer>
   </body>
   </html>
+
+  {{ $authJS := resources.Get "js/auth.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $authJS.Permalink }}" integrity="{{ $authJS.Data.Integrity }}"></script>

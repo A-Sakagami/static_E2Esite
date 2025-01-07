@@ -4,7 +4,6 @@ date: {{ .Date }}
 draft: true
 categories: [""]
 tags: ["","",""]
-Authors: "Yusuke Yoneda"
 comment: true
 toc: true
 autoCollapseToc: false

@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <title>トップページ</title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="http://localhost:1313/static_E2Esite/css/style.css " rel="stylesheet">
 </head>
 <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/">ホーム</a></li>
-          <li><a href="/about/">このサイトについて</a></li>
-          <li><a href="/login/">ログイン</a></li>
+      <nav style="float: right;">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
+          <li><a href="http://localhost:1313/static_E2Esite//">ホーム</a></li>
+          <li><a href="http://localhost:1313/static_E2Esite//about/">このサイトについて</a></li>
+          <li><a href="http://localhost:1313/static_E2Esite//login/">ログイン</a></li>
         </ul>
       </nav>
-      <h1>トップページ</h1>
+      <h1 style="text-align: center;">トップページ</h1>
     </header>
   
     <main>
@@ -30,6 +30,10 @@
 </ul>
 <p>下記のリンクから詳細をご覧ください。</p>
 
+        <iframe id="authFrame" src="auth.html" style="display:none;"></iframe>
+        <div id="authButtons">
+          
+        </div>
       </article>
     </main>
   
@@ -38,3 +42,6 @@
     </footer>
   </body>
   </html>
+
+  
+<script src="http://localhost:1313/static_E2Esite/js/auth.min.ec17efe005828016d03cc072b765a378cbd64b469c0a3d5c553ba52e209c189c.js" integrity="sha256-7Bfv4AWCgBbQPMByt2WjeMvWS0acCj1cVTulLiCcGJw="></script>
