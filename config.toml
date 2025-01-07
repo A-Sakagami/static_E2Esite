@@ -14,6 +14,11 @@ publishDir = 'public'
   showHeader = true
   loggedIn = true
 
+[permalinks]
+  about = "/about/"
+  contact = "/contact/"
+  login = "/login/"
+
 # メニューの設定
 [menu]
   [[menu.main]]
