@@ -12,6 +12,7 @@ publishDir = 'public'
   author = "A-Sakagami"
   github = "https://github.com/A-Sakagami/"
   showHeader = true
+  loggedIn = false
 
 # メニューの設定
 [menu]

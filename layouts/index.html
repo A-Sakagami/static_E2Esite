@@ -8,14 +8,13 @@
 </head>
 <body>
     <header>
+      <h1 style="text-align: center; position: absolute; left: 50%; transform: translateX(-50%);">{{ .Title }}</h1>
       <nav style="float: right;">
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
           <li><a href="{{ .Site.BaseURL }}/">ホーム</a></li>
           <li><a href="{{ .Site.BaseURL }}/about/">このサイトについて</a></li>
-          <li><a href="{{ .Site.BaseURL }}/login/">ログイン</a></li>
-        </ul>
+          <li id="authLink"><a href="{{ .Site.BaseURL }}/login/">ログイン</a></li>
       </nav>
-      <h1 style="text-align: center;">{{ .Title }}</h1>
     </header>
   
     <main>
@@ -35,4 +34,5 @@
   </html>
 
   {{ $authJS := resources.Get "js/auth.js" | resources.Minify | resources.Fingerprint }}
+  {{ $authJS := resources.Get "js/login.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $authJS.Permalink }}" integrity="{{ $authJS.Data.Integrity }}"></script>
