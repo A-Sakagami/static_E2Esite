@@ -41,14 +41,14 @@ window.addEventListener('message', function(event) {
     const logoutButton = document.createElement('button');
     logoutButton.textContent = 'ログアウト';
     logoutButton.onclick = function() {
-      window.location.href = '{{ .Site.BaseURL }}/logout/';
+      window.location.href = '{{ .Site.BaseURL }}logout/';
     };
     authButtons.appendChild(logoutButton);
   } else {
     const loginButton = document.createElement('button');
     loginButton.textContent = 'ログイン';
     loginButton.onclick = function() {
-      window.location.href = '{{ .Site.BaseURL }}/login/';
+      window.location.href = '{{ .Site.BaseURL }}login/';
     };
     authButtons.appendChild(loginButton);
   }
