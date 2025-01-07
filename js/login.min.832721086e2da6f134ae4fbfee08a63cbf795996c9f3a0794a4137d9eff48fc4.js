@@ -1,1 +1,0 @@
-window.addEventListener("message",function(e){if(e.origin!==window.location.origin)return;const n=e.data,t=document.getElementById("authLink");n.isLoggedIn?t.innerHTML='<a href="BASE_URL/logout/">ログアウト</a>':t.innerHTML='<a href="BASE_URL/login/">ログイン</a>'}),document.getElementById("authFrame").style.display="block"
