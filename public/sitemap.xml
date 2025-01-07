@@ -8,7 +8,13 @@
     <loc>http://localhost:1313/static_E2Esite/</loc>
     <lastmod>2025-01-06T12:18:21+09:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/static_E2Esite/about/</loc>
+  </url><url>
     <loc>http://localhost:1313/static_E2Esite/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/static_E2Esite/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1313/static_E2Esite/login/</loc>
   </url><url>
     <loc>http://localhost:1313/static_E2Esite/tags/</loc>
   </url>

@@ -9,15 +9,16 @@
 </head>
 <body>
     <header>
-      <nav style="float: right;">
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0;">トップページ</h1>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
-          <li><a href="http://localhost:1313/static_E2Esite//">ホーム</a></li>
-          <li><a href="http://localhost:1313/static_E2Esite//about/">このサイトについて</a></li>
-          <li><a href="http://localhost:1313/static_E2Esite//login/">ログイン</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
+            <li><a href="/static_E2Esite/about/">About</a></li>
+            <li><a href="/static_E2Esite/contact/">Contact</a></li>
+            <li><a href="/static_E2Esite/login/">Login</a></li>
         </ul>
-      </nav>
-      <h1 style="text-align: center;">トップページ</h1>
-    </header>
+    </nav>
+</header>
   
     <main>
       <article>
@@ -30,7 +31,7 @@
 </ul>
 <p>下記のリンクから詳細をご覧ください。</p>
 
-        <iframe id="authFrame" src="auth.html" style="display:none;"></iframe>
+        <iframe id="authFrame" src="http://localhost:1313/static_E2Esite/auth.html" style="display:none;"></iframe>
         <div id="authButtons">
           
         </div>
@@ -42,6 +43,3 @@
     </footer>
   </body>
   </html>
-
-  
-<script src="http://localhost:1313/static_E2Esite/js/auth.min.ec17efe005828016d03cc072b765a378cbd64b469c0a3d5c553ba52e209c189c.js" integrity="sha256-7Bfv4AWCgBbQPMByt2WjeMvWS0acCj1cVTulLiCcGJw="></script>

@@ -7,18 +7,7 @@
     <link href="{{ .Site.BaseURL }}css/style.css " rel="stylesheet">
 </head>
 <body>
-    <header>
-      <nav style="float: right;">
-        <h1 style="text-align: center; position: absolute; left: 50%; transform: translateX(-50%);">{{ .Title }}</h1>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
-          <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-          <li><a href="{{ "about/" | absURL }}">About</a></li>
-          <li><a href="{{ "contact/" | absURL }}">Contact</a></li>
-          <li><a href="{{ "login/" | absURL }}">Login</a></li>
-        </ul>
-      </nav>
-    </header>
-  
+    {{ partial "header.html" . }}
     <main>
       <article>
         {{ .Content }}

@@ -17,16 +17,21 @@ publishDir = 'public'
 # メニューの設定
 [menu]
   [[menu.main]]
-    name = "ホーム"
+    name = "Home"
     url = "/"
     weight = 1
 
   [[menu.main]]
-    name = "このサイトについて"
+    name = "About"
     url = "/about/"
     weight = 2
 
   [[menu.main]]
-    name = "ログイン"
-    url = "/login/"
+    name = "Contact"
+    url = "/contact/"
     weight = 3
+
+  [[menu.main]]
+    name = "Login"
+    url = "/login/"
+    weight = 4
