@@ -5,6 +5,12 @@
     <title>{{ .Title }}</title>
     <meta name="description" content="{{ .Params.description }}">
     <link href="{{ .Site.BaseURL }}css/style.css " rel="stylesheet">
+    <script>
+      function handleButtonClick() {
+        const userInput = document.getElementById('userInput').value;
+        alert('入力された内容: ' + userInput);
+      }
+    </script>
 </head>
 <body>
     {{ partial "header.html" . }}
@@ -12,14 +18,15 @@
       <article>
         {{ .Content }}
         <iframe id="authFrame" src="{{ .Site.BaseURL }}auth.html" style="display:none;"></iframe>
-        <div id="authButtons">
-          <!-- ボタンはJavaScriptで動的に追加されます -->
+        <!-- テキストエリアとボタンの追加 -->
+        <div>
+          <textarea id="userInput" rows="4" cols="50" placeholder="ここに入力してください..."></textarea>
+          <br>
+          <button onclick="handleButtonClick()">送信</button>
         </div>
       </article>
     </main>
   
-    <footer>
-      <p>© 2024 My Hugo Site</p>
-    </footer>
+    {{ partial "footer.html" . }}
   </body>
-  </html>
+</html>
