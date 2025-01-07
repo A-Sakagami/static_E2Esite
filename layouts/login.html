@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      margin-top: 0;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>ログイン</h2>
+    <form id="loginForm">
+      <label>アカウント種別:</label>
+      <div>
+        <input type="radio" id="user" name="role" value="user" required>
+        <label for="user">一般</label>
+      </div>
+      <div>
+        <input type="radio" id="admin" name="role" value="admin" required>
+        <label for="admin">管理者</label>
+      </div>
+      <button type="submit">ログイン</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const role = document.querySelector('input[name="role"]:checked').value;
+
+      // ログイン処理
+      console.log('アカウント種別:', role);
+
+      // 認証が成功した場合、キャッシュに保存します
+      localStorage.setItem('isLoggedIn', true);
+      localStorage.setItem('role', role);
+
+      // ログイン後のリダイレクト
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ .Title }}</title>
+    <link href="{{ .Site.BaseURL }}css/style.css " rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>{{ .Title }}</h1>
-    </header>
+    {{ partial "header.html" . }}
     <main>
         {{ .Content }}
     </main>
+    {{ partial "footer.html" . }}
 </body>
 </html>

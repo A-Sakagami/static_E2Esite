@@ -3,20 +3,37 @@
 <head>
 	<meta name="generator" content="Hugo 0.136.5"><script src="/static_E2Esite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=static_E2Esite/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
-    <title>ワークフローツール</title>
+    <title>Workflow Tool</title>
     <meta name="description" content="">
-    <link href="http://localhost:1313/static_E2Esite/css/style.css " rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
     <script>
       function handleButtonClick() {
         const userInput = document.getElementById('userInput').value;
         alert('入力された内容: ' + userInput);
       }
+
+      function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const role = localStorage.getItem('role');
+        const authLink = document.getElementById('authLink');
+
+        if (isLoggedIn) {
+          if (role === 'admin') {
+            authLink.innerHTML = '<a href="http:\/\/localhost:1313\/static_E2Esite\//admin/">管理者ページ</a>';
+          }
+          authLink.innerHTML += '<a href="http:\/\/localhost:1313\/static_E2Esite\//logout/">ログアウト</a>';
+        } else {
+          authLink.innerHTML = '<a href="http:\/\/localhost:1313\/static_E2Esite\//login.html">ログイン</a>';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 </head>
 <body>
     <header>
     <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="margin: 0;">ワークフローツール</h1>
+        <h1 style="margin: 0;">Workflow Tool</h1>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
             <li><a href="/static_E2Esite/about/">About</a></li>
@@ -28,7 +45,7 @@
   
     <main>
       <article>
-        <h1 id="サイトのメインコンテンツ">サイトのメインコンテンツ</h1>
+        <h2 id="サイトのメインコンテンツ">サイトのメインコンテンツ</h2>
 <p>ようこそ！このサイトはHugoを使って作成されています。</p>
 <ul>
 <li><strong>高速で軽量</strong></li>
@@ -50,5 +67,5 @@
     <footer>
     <p>© 2024 My Hugo Site</p>
 </footer>
-  </body>
+</body>
 </html>

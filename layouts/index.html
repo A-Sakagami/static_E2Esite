@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <title>{{ .Title }}</title>
     <meta name="description" content="{{ .Params.description }}">
-    <link href="{{ .Site.BaseURL }}css/style.css " rel="stylesheet">
+    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <script>
       function handleButtonClick() {
         const userInput = document.getElementById('userInput').value;
         alert('入力された内容: ' + userInput);
       }
+
+      function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const role = localStorage.getItem('role');
+        const authLink = document.getElementById('authLink');
+
+        if (isLoggedIn) {
+          if (role === 'admin') {
+            authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/admin/">管理者ページ</a>';
+          }
+          authLink.innerHTML += '<a href="{{ .Site.BaseURL }}/logout/">ログアウト</a>';
+        } else {
+          authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/login.html">ログイン</a>';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', checkLoginStatus);
     </script>
 </head>
 <body>
@@ -28,5 +45,5 @@
     </main>
   
     {{ partial "footer.html" . }}
-  </body>
+</body>
 </html>
