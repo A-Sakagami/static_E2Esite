@@ -30,15 +30,15 @@
 
   <script>
     document.getElementById('admin-login').addEventListener('click', () => {
-        localStorage.setItem('userType', 'admin'); // 種別を保存
-        window.location.href = "{{ .Site.BaseURL }}"; // index.html に戻る
+      localStorage.setItem('userType', 'admin'); // 種別を保存
+      window.location.href = "https://a-sakagami.github.io/static_E2Esite/"; // index.html に戻る
     });
 
     document.getElementById('user-login').addEventListener('click', () => {
       localStorage.setItem('userType', 'user'); // 種別を保存
 
       // ログイン後のリダイレクト
-      window.location.href = "{{ .Site.BaseURL }}";
+      window.location.href = "https://a-sakagami.github.io/static_E2Esite/";
     });
   </script>
   {{ partial "footer.html" . }}
