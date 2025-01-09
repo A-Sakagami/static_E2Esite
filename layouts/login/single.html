@@ -29,16 +29,13 @@
   </div>
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const role = document.querySelector('input[name="role"]:checked').value;
+    document.getElementById('admin-login').addEventListener('click', () => {
+        localStorage.setItem('userType', 'admin'); // 種別を保存
+        window.location.href = "{{ .Site.BaseURL }}"; // index.html に戻る
+    });
 
-      // ログイン処理
-      console.log('アカウント種別:', role);
-
-      // 認証が成功した場合、キャッシュに保存します
-      localStorage.setItem('isLoggedIn', true);
-      localStorage.setItem('role', role);
+    document.getElementById('user-login').addEventListener('click', () => {
+      localStorage.setItem('userType', 'user'); // 種別を保存
 
       // ログイン後のリダイレクト
       window.location.href = "{{ .Site.BaseURL }}";

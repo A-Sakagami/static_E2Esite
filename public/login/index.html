@@ -42,16 +42,13 @@
   </div>
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const role = document.querySelector('input[name="role"]:checked').value;
+    document.getElementById('admin-login').addEventListener('click', () => {
+        localStorage.setItem('userType', 'admin'); 
+        window.location.href = "http:\/\/localhost:1313\/static_E2Esite\/"; 
+    });
 
-      
-      console.log('アカウント種別:', role);
-
-      
-      localStorage.setItem('isLoggedIn', true);
-      localStorage.setItem('role', role);
+    document.getElementById('user-login').addEventListener('click', () => {
+      localStorage.setItem('userType', 'user'); 
 
       
       window.location.href = "http:\/\/localhost:1313\/static_E2Esite\/";

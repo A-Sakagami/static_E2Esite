@@ -8,40 +8,53 @@
     <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
     <script>
-      function handleButtonClick() {
-        const userInput = document.getElementById('userInput').value;
-        alert('入力された内容: ' + userInput);
-      }
+      // 初期化
+document.addEventListener("DOMContentLoaded", () => {
+    const loginButton = document.getElementById("login-button");
+    const loginScreen = document.getElementById("login-screen");
+    const adminArea = document.getElementById("admin-area");
+    const generalArea = document.getElementById("user-area");
 
-      function checkLoginStatus() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const role = localStorage.getItem('role');
-        const authLink = document.getElementById('authLink');
+    // ログイン種別の取得
+    const userType = localStorage.getItem("userType");
 
-        if (isLoggedIn) {
-          if (role === 'admin') {
-            authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/admin/">管理者ページ</a>';
-          }
-          authLink.innerHTML += '<a href="{{ .Site.BaseURL }}/logout/">ログアウト</a>';
-        } else {
-          authLink.innerHTML = '<a href="{{ .Site.BaseURL }}/login.html">ログイン</a>';
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', checkLoginStatus);
-    </script>
+    if (userType === "admin") {
+        // 管理者用エリアを表示
+        loginScreen.style.display = "none";
+        adminArea.style.display = "block";
+    } else if (userType === "user") {
+        // 一般ユーザー用エリアを表示
+        loginScreen.style.display = "none";
+        generalArea.style.display = "block";
+    } else {
+        // 初期画面
+        loginButton.addEventListener("click", () => {
+            window.location.href = "{{ .Site.BaseURL }}/login"; // login.html に遷移
+        });
+    }
+});
+    </script> <!-- JavaScriptファイル -->
 </head>
 <body>
     {{ partial "header.html" . }}
     <main>
       <article>
         {{ .Content }}
-        <iframe id="authFrame" src="{{ .Site.BaseURL }}auth.html" style="display:none;"></iframe>
-        <!-- テキストエリアとボタンの追加 -->
-        <div>
-          <textarea id="userInput" rows="4" cols="50" placeholder="ここに入力してください..."></textarea>
-          <br>
-          <button onclick="handleButtonClick()">送信</button>
+        <!-- 初期画面 -->
+        <div id="login-screen">
+          <button id="login-button">ログイン</button>
+        </div>
+
+        <!-- 管理者用エリア -->
+        <div id="admin-area" style="display: none;">
+          <iframe src="admin.html" width="100%" height="400" style="border: none;"></iframe>
+        </div>
+
+        <!-- 一般ユーザー用エリア -->
+        <div id="general-area" style="display: none;">
+          <h2>一般ユーザーエリア</h2>
+          <textarea placeholder="ここに入力してください..."></textarea>
+          <button>送信</button>
         </div>
       </article>
     </main>

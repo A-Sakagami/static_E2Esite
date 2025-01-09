@@ -9,28 +9,32 @@
     <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
     <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
     <script>
-      function handleButtonClick() {
-        const userInput = document.getElementById('userInput').value;
-        alert('入力された内容: ' + userInput);
-      }
+      
+document.addEventListener("DOMContentLoaded", () => {
+    const loginButton = document.getElementById("login-button");
+    const loginScreen = document.getElementById("login-screen");
+    const adminArea = document.getElementById("admin-area");
+    const generalArea = document.getElementById("user-area");
 
-      function checkLoginStatus() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const role = localStorage.getItem('role');
-        const authLink = document.getElementById('authLink');
+    
+    const userType = localStorage.getItem("userType");
 
-        if (isLoggedIn) {
-          if (role === 'admin') {
-            authLink.innerHTML = '<a href="http:\/\/localhost:1313\/static_E2Esite\//admin/">管理者ページ</a>';
-          }
-          authLink.innerHTML += '<a href="http:\/\/localhost:1313\/static_E2Esite\//logout/">ログアウト</a>';
-        } else {
-          authLink.innerHTML = '<a href="http:\/\/localhost:1313\/static_E2Esite\//login.html">ログイン</a>';
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', checkLoginStatus);
-    </script>
+    if (userType === "admin") {
+        
+        loginScreen.style.display = "none";
+        adminArea.style.display = "block";
+    } else if (userType === "user") {
+        
+        loginScreen.style.display = "none";
+        generalArea.style.display = "block";
+    } else {
+        
+        loginButton.addEventListener("click", () => {
+            window.location.href = "http:\/\/localhost:1313\/static_E2Esite\//login"; 
+        });
+    }
+});
+    </script> 
 </head>
 <body>
     <header>
@@ -54,14 +58,22 @@
 <li><strong>シンプルな構成</strong></li>
 <li><strong>柔軟なカスタマイズ</strong></li>
 </ul>
-<p>下記に報告内容を記載してください。</p>
 
-        <iframe id="authFrame" src="http://localhost:1313/static_E2Esite/auth.html" style="display:none;"></iframe>
         
-        <div>
-          <textarea id="userInput" rows="4" cols="50" placeholder="ここに入力してください..."></textarea>
-          <br>
-          <button onclick="handleButtonClick()">送信</button>
+        <div id="login-screen">
+          <button id="login-button">ログイン</button>
+        </div>
+
+        
+        <div id="admin-area" style="display: none;">
+          <iframe src="admin.html" width="100%" height="400" style="border: none;"></iframe>
+        </div>
+
+        
+        <div id="general-area" style="display: none;">
+          <h2>一般ユーザーエリア</h2>
+          <textarea placeholder="ここに入力してください..."></textarea>
+          <button>送信</button>
         </div>
       </article>
     </main>
