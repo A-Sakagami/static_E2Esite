@@ -1,0 +1,11 @@
+/* フッターのスタイルcss */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed; /* 固定フッター */
+    bottom: 0;
+    z-index: 1000;
+  }
