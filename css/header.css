@@ -21,8 +21,18 @@ header .logo {
 
 header nav {
     display: flex;
-    gap: 20px; /* メニュー間のスペース */
+    align-items: center;
     margin-right: 10px; /* メニュー右側に余白 */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li{
+    display: flex;
+    margin: 20px; /* メニュー間のスペース */
 }
 
 header nav a {
