@@ -42,16 +42,17 @@
   </div>
 
   <script>
-    document.getElementById('admin-login').addEventListener('click', () => {
-        localStorage.setItem('userType', 'admin'); 
-        window.location.href = "http:\/\/localhost:1313\/static_E2Esite\/"; 
-    });
-
-    document.getElementById('user-login').addEventListener('click', () => {
-      localStorage.setItem('userType', 'user'); 
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault(); 
+      const role = document.querySelector('input[name="role"]:checked').value;
 
       
-      window.location.href = "http:\/\/localhost:1313\/static_E2Esite\/";
+      if (role === "admin") {
+          localStorage.setItem("userType", "admin");
+      } else if (role === "user") {
+          localStorage.setItem("userType", "user");
+      }
+      window.location.href = "https://a-sakagami.github.io/static_E2Esite/";
     });
   </script>
   <footer>

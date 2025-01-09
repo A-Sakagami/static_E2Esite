@@ -29,15 +29,16 @@
   </div>
 
   <script>
-    document.getElementById('admin-login').addEventListener('click', () => {
-      localStorage.setItem('userType', 'admin'); // 種別を保存
-      window.location.href = "https://a-sakagami.github.io/static_E2Esite/"; // index.html に戻る
-    });
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault(); // ページ遷移を防ぐ
+      const role = document.querySelector('input[name="role"]:checked').value;
 
-    document.getElementById('user-login').addEventListener('click', () => {
-      localStorage.setItem('userType', 'user'); // 種別を保存
-
-      // ログイン後のリダイレクト
+      // ログイン種別を localStorage に保存
+      if (role === "admin") {
+          localStorage.setItem("userType", "admin");
+      } else if (role === "user") {
+          localStorage.setItem("userType", "user");
+      }
       window.location.href = "https://a-sakagami.github.io/static_E2Esite/";
     });
   </script>
