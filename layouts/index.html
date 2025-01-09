@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         // 初期画面
         loginButton.addEventListener("click", () => {
-            window.location.href = "{{ .Site.BaseURL }}login"; // login.html に遷移
+            window.location.href = "{{ .Site.BaseURL }}" + "login/"; // login.html に遷移
         });
     }
 });
