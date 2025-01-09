@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head><script src="/static_E2Esite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=static_E2Esite/livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link href="http://localhost:1313/static_E2Esite/css/style.css " rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="description" content="">
+  <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
+  <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
+  <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
+  <link href="http://localhost:1313/static_E2Esite/css/loginstyle.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+  <header>
+    <div class="logo" data-test-id="logo">Login</div>
     <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="margin: 0;">Login</h1>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
             <li><a href="/static_E2Esite/about/">About</a></li>
@@ -18,12 +22,42 @@
     </nav>
 </header>
   
-    <main>
-        <h1 id="ログインフォーム">ログインフォーム</h1>
+  <h1 id="ログインフォーム">ログインフォーム</h1>
 <p>以下のフォームに必要事項を入力してください。</p>
 
-    </main>
-    <footer>
+  <div class="login-container">
+    <h2>ログイン</h2>
+    <form id="loginForm">
+      <label>アカウント種別:</label>
+      <div>
+        <input type="radio" id="user" name="role" value="user" required>
+        <label for="user">一般</label>
+      </div>
+      <div>
+        <input type="radio" id="admin" name="role" value="admin" required>
+        <label for="admin">管理者</label>
+      </div>
+      <button type="submit">ログイン</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const role = document.querySelector('input[name="role"]:checked').value;
+
+      
+      console.log('アカウント種別:', role);
+
+      
+      localStorage.setItem('isLoggedIn', true);
+      localStorage.setItem('role', role);
+
+      
+      window.location.href = "http:\/\/localhost:1313\/static_E2Esite\/";
+    });
+  </script>
+  <footer>
     <p>© 2024 My Hugo Site</p>
 </footer>
 </body>

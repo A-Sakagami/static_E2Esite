@@ -16,6 +16,8 @@
   </url><url>
     <loc>http://localhost:1313/static_E2Esite/login/</loc>
   </url><url>
+    <loc>http://localhost:1313/static_E2Esite/login/</loc>
+  </url><url>
     <loc>http://localhost:1313/static_E2Esite/tags/</loc>
   </url>
 </urlset>

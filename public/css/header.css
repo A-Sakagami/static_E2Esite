@@ -1,0 +1,55 @@
+/* ヘッダーのスタイルcss */
+header {
+    display: flex;
+    justify-content: space-between; /* タイトルとメニューを左右に分ける */
+    align-items: center; /* 高さを揃える */
+    padding: 0 20px; /* 左右に余白を設ける */
+    background-color: #ffffff; /* 背景色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 下に影を追加 */
+    position: fixed; /* スクロールしてもヘッダーを固定 */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px; /* ヘッダーの高さを設定 */
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 10px; /* タイトル左に少し余白 */
+}
+
+header nav {
+    display: flex;
+    gap: 20px; /* メニュー間のスペース */
+    margin-right: 10px; /* メニュー右側に余白 */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #007BFF; /* ホバー時に色を変更 */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* タイトルとメニューを縦並びに */
+        align-items: flex-start; /* 左詰め */
+        height: auto;
+        padding: 10px;
+    }
+
+    header .logo {
+        margin-bottom: 10px; /* タイトルとメニューの間に余白 */
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        gap: 10px; /* メニューの間隔を狭くする */
+    }
+}

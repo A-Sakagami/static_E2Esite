@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 ---
 # 管理者用ページ
 

@@ -6,6 +6,8 @@
     <title>Workflow Tool</title>
     <meta name="description" content="">
     <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
     <script>
       function handleButtonClick() {
         const userInput = document.getElementById('userInput').value;
@@ -32,8 +34,8 @@
 </head>
 <body>
     <header>
+    <div class="logo" data-test-id="logo">Workflow Tool</div>
     <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="margin: 0;">Workflow Tool</h1>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
             <li><a href="/static_E2Esite/about/">About</a></li>

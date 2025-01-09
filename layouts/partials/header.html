@@ -1,6 +1,6 @@
 <header>
+    <div class="logo" data-test-id="logo">{{ .Title }}</div>
     <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="margin: 0;">{{ .Title }}</h1>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="{{ .Site.BaseURL }}">Home</a></li>
             <li><a href="{{ "about/" | relURL }}">About</a></li>

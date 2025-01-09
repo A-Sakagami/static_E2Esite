@@ -1,31 +1,53 @@
-/* loginstyle.css */
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  .login-container {
-    border: 1px solid #ccc;
+/* ログインページ専用スタイル */
+.login-container {
+    width: 320px; /* 幅を固定 */
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .login-container h2 {
-    margin-top: 0;
-  }
-  .login-container button {
+    border: 1px solid #ccc;
+    border-radius: 8px; /* 角を少し丸める */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 少し濃い影を追加 */
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.8em; /* タイトルのフォントサイズを調整 */
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-container button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    margin-top: 15px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  .login-container button:hover {
+    font-size: 1em;
+}
+
+.login-container button:hover {
     background-color: #45a049;
-  }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* モバイル画面で幅を広げる */
+        padding: 15px;
+    }
+
+    .login-container h2 {
+        font-size: 1.5em; /* タイトルサイズを縮小 */
+    }
+
+    .login-container button {
+        font-size: 0.9em; /* ボタンフォントサイズを縮小 */
+    }
+}
