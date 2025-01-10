@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Params.description }}">
-  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
-  <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
-  <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
-  <link href="{{ .Site.BaseURL }}css/loginstyle.css" rel="stylesheet">
-</head>
-<body>
-  {{ partial "header.html" . }}
-  {{ .Content }}
-  {{ define "main" }}
+{{ define "main" }}
   <h2>ログイン</h2>
   <form id="loginForm">
       <label for="username">ユーザー名:</label>
@@ -21,7 +7,4 @@
       <input type="password" id="password" name="password" required>
       <button type="submit">ログイン</button>
   </form>
-  {{ end }}
-  {{ partial "footer.html" . }}
-</body>
-</html>
+{{ end }}

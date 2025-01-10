@@ -1,7 +1,7 @@
 /* ログインページ専用スタイル */
 .login-container {
-    width: 320px; /* 幅を固定 */
-    margin: 20px auto;
+    width: 400px; /* 幅を固定 */
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px; /* 角を少し丸める */

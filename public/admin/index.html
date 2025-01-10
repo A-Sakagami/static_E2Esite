@@ -1,48 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head><script src="/static_E2Esite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=static_E2Esite/livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <title>Admins</title>
-  <meta name="description" content="">
-  <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
-  <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
-  <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
-  <link href="http://localhost:1313/static_E2Esite/css/adminstyle.css" rel="stylesheet">
+<html>
+<head>
+    <title>Admins</title>
 </head>
 <body>
-  <header>
-    <div class="logo" data-test-id="logo">Admins</div>
-    <nav>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
-            <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
-            <li><a href="/static_E2Esite/about/">About</a></li>
-            <li><a href="/static_E2Esite/contact/">Contact</a></li>
-            <li><a href="/static_E2Esite/login/">Login</a></li>
-        </ul>
-    </nav>
-</header>
-  
-  
-  <div class="admin-container">
-    <h2>管理者用ページ</h2>
-    <p>メッセージ一覧</p>
-    <ul id="messageList"></ul>
-    <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            const response = await fetch("/admin/messages");
-            const messages = await response.json();
-            const messageList = document.getElementById("messageList");
-
-            messages.forEach((message) => {
-                const li = document.createElement("li");
-                li.textContent = `User ${message.userId}: ${message.message}`;
-                messageList.appendChild(li);
-            });
-        });
-    </script>
-  </div>
-  <footer>
-    <p>© 2024 My Hugo Site</p>
-</footer>
+    <h2>Admins</h2>
+    
+        <h2><a href="/static_E2Esite/admin/admin/"></a></h2>
+    
 </body>
 </html>
