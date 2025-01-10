@@ -16,30 +16,43 @@
     <h2>ログイン</h2>
     <form id="loginForm">
       <label>アカウント種別:</label>
-      <div>
+      <div id="role-radio">
         <input type="radio" id="user" name="role" value="user" required>
         <label for="user">一般</label>
       </div>
-      <div>
+      <div id="role-radio">
         <input type="radio" id="admin" name="role" value="admin" required>
         <label for="admin">管理者</label>
+      </div><br>
+      <div id="login-input-form">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
       </div>
       <button type="submit">ログイン</button>
     </form>
   </div>
 
   <script>
-    document.getElementById("loginForm").addEventListener("submit", (event) => {
-      event.preventDefault(); // ページ遷移を防ぐ
-      const role = document.querySelector('input[name="role"]:checked').value;
+    document.getElementById("loginForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
 
-      // ログイン種別を localStorage に保存
-      if (role === "admin") {
-          localStorage.setItem("userType", "admin");
-      } else if (role === "user") {
-          localStorage.setItem("userType", "user");
+      const response = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("user", JSON.stringify(data.user));
+          window.location.href = `{{ .Site.BaseURL }}`;
+      } else {
+          alert("ログインに失敗しました");
       }
-      window.location.href = "https://a-sakagami.github.io/static_E2Esite/";
     });
   </script>
   {{ partial "footer.html" . }}
