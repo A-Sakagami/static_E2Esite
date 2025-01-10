@@ -5,7 +5,14 @@ footer {
     text-align: center;
     padding: 10px 20px;
     width: 100%;
-    position: fixed; /* 固定フッター */
+    position: sticky; /* ビューポートの下部に固定 */
     bottom: 0;
-    z-index: 1000;
+    z-index: 10; /* 要素の下にならないようにする */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 上に影を追加 */
   }
+
+  @media (max-width: 768px) {
+    footer {
+        padding: 10px; /* フッターの高さを調整 */
+    }
+}
