@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workflow Tool on 業務連絡フロー</title><link>https://a-sakagami.github.io/static_E2Esite/</link><description>Recent content in Workflow Tool on 業務連絡フロー</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://a-sakagami.github.io/static_E2Esite/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://a-sakagami.github.io/static_E2Esite/admin/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/admin/admin/</guid><description>&lt;h1 id="管理者用ページ">管理者用ページ&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workflow Tool on 業務連絡フロー</title><link>https://a-sakagami.github.io/static_E2Esite/</link><description>Recent content in Workflow Tool on 業務連絡フロー</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://a-sakagami.github.io/static_E2Esite/index.xml" rel="self" type="application/rss+xml"/><item><title>about</title><link>https://a-sakagami.github.io/static_E2Esite/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/about/</guid><description>&lt;h1 id="このサイトについて">このサイトについて&lt;/h1>
+&lt;p>このサイトは、エンドツーエンドのテストをサポートするために作成されました。ここでは、テストの実行方法やベストプラクティスについての情報を提供しています。&lt;/p>
+&lt;h2 id="主な機能">主な機能&lt;/h2>
+&lt;ul>
+&lt;li>テストの自動化&lt;/li>
+&lt;li>テスト結果のレポート&lt;/li>
+&lt;li>テストケースの管理&lt;/li>
+&lt;/ul>
+&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
+&lt;p>ご質問やフィードバックがありましたら、お気軽にお問い合わせください。&lt;/p>
+&lt;ul>
+&lt;li>メール: &lt;a href="mailto:sakagami@genz.jp">sakagami@genz.jp&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Admin</title><link>https://a-sakagami.github.io/static_E2Esite/admin/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/admin/admin/</guid><description>&lt;h1 id="管理者用ページ">管理者用ページ&lt;/h1>
 &lt;p>このページは管理者専用の情報を含みます。以下はドラフトの内容です。&lt;/p>
 &lt;h2 id="セクション1-ワークフロー">セクション1: ワークフロー&lt;/h2>
 &lt;ul>
@@ -22,19 +34,7 @@
 &lt;li>セキュリティ設定の更新&lt;/li>
 &lt;li>サポートへの連絡&lt;/li>
 &lt;/ul>
-&lt;p>このページの内容は随時更新される予定です。&lt;/p></description></item><item><title>about</title><link>https://a-sakagami.github.io/static_E2Esite/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/about/</guid><description>&lt;h1 id="このサイトについて">このサイトについて&lt;/h1>
-&lt;p>このサイトは、エンドツーエンドのテストをサポートするために作成されました。ここでは、テストの実行方法やベストプラクティスについての情報を提供しています。&lt;/p>
-&lt;h2 id="主な機能">主な機能&lt;/h2>
-&lt;ul>
-&lt;li>テストの自動化&lt;/li>
-&lt;li>テスト結果のレポート&lt;/li>
-&lt;li>テストケースの管理&lt;/li>
-&lt;/ul>
-&lt;h2 id="お問い合わせ">お問い合わせ&lt;/h2>
-&lt;p>ご質問やフィードバックがありましたら、お気軽にお問い合わせください。&lt;/p>
-&lt;ul>
-&lt;li>メール: &lt;a href="mailto:sakagami@genz.jp">sakagami@genz.jp&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Contact</title><link>https://a-sakagami.github.io/static_E2Esite/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/contact/</guid><description>&lt;h1 id="お問い合わせページ">お問い合わせページ&lt;/h1>
+&lt;p>このページの内容は随時更新される予定です。&lt;/p></description></item><item><title>Contact</title><link>https://a-sakagami.github.io/static_E2Esite/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/contact/</guid><description>&lt;h1 id="お問い合わせページ">お問い合わせページ&lt;/h1>
 &lt;p>こちらのページからお問い合わせいただけます。以下のフォームに必要事項をご記入の上、送信してください。&lt;/p>
 &lt;h2 id="お問い合わせフォーム">お問い合わせフォーム&lt;/h2>
 &lt;ul>
