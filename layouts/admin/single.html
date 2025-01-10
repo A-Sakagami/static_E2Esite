@@ -1,4 +1,20 @@
 {{ define "main" }}
-  <h2>管理者ページ</h2>
-  <ul id="messageList"></ul>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // ログイン状態をチェック
+        const userType = localStorage.getItem("userType");
+
+        if (userType !== "admin") {
+            // 管理者でない場合、ログインページにリダイレクト
+            alert("管理者権限が必要です。ログインしてください。");
+            window.location.href = "/login/";
+        }
+    });
+</script>
+<div class="admin-container">
+    <h2>管理者専用ページ</h2>
+    <p>ここに管理者用のコンテンツを表示します。</p>
+    {{ .Content }}
+</div>
 {{ end }}
+
