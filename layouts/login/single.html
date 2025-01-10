@@ -1,10 +1,29 @@
 {{ define "main" }}
-  <h2>ログイン</h2>
-  <form id="loginForm">
-      <label for="username">ユーザー名:</label>
-      <input type="text" id="username" name="username" required>
-      <label for="password">パスワード:</label>
-      <input type="password" id="password" name="password" required>
-      <button type="submit">ログイン</button>
-  </form>
+<div class="login-container">
+    <h2>ログイン</h2>
+    <form id="loginForm">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">ログイン</button>
+    </form>
+</div>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // 簡易的な認証処理
+        if (username === "admin" && password === "admin") {
+            localStorage.setItem("userType", "admin");
+            alert("ログインしました。");
+            window.location.href = "/";
+        } else {
+            alert("ログインに失敗しました。");
+        }
+    });
+</script>
 {{ end }}
