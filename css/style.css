@@ -43,5 +43,16 @@ article button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+main {
+  flex: 1; /* コンテンツエリアをフッター以外に伸縮させる */
+  padding: 20px;
+  box-sizing: border-box; /* パディングを含むサイズ計算 */
+  overflow: auto; /* コンテンツが画面外にあふれる場合はスクロール */
+  padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
+}
 
-
+@media (max-width: 768px) {
+  main {
+      padding: 10px; /* パディングを調整 */
+  }
+}
