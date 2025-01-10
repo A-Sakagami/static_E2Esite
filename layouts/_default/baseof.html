@@ -8,9 +8,9 @@
     <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
     {{ if eq .File.BaseFileName "login" }}
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/loginstyle.css"> <!-- loginページ専用CSS -->
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/loginstyle.css"> <!-- loginページ専用CSS -->
     {{ else if eq .File.BaseFileName "admin" }}
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/adminstyle.css"> <!-- adminページ専用CSS -->
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/adminstyle.css"> <!-- adminページ専用CSS -->
     {{ end }}
     <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
 </head>
