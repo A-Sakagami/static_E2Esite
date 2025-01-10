@@ -48,7 +48,8 @@ main {
   padding: 20px;
   box-sizing: border-box; /* パディングを含むサイズ計算 */
   overflow: auto; /* コンテンツが画面外にあふれる場合はスクロール */
-  padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
+  margin-top: 60px; /* ヘッダーの高さ分の余白を追加 */
+  margin-bottom: 60px; /* フッターの高さ分の余白を追加 */
 }
 
 @media (max-width: 768px) {
