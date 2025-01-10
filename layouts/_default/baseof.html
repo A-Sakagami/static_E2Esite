@@ -12,7 +12,7 @@
     {{ else if eq .File.BaseFileName "admin" }}
         <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/adminstyle.css"> <!-- adminページ専用CSS -->
     {{ end }}
-    <script defer src="/js/main.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
 </head>
 <body>
     {{ partial "header.html" . }}

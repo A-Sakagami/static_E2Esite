@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 業務連絡フロー</title>
-    <link>https://a-sakagami.github.io/static_E2Esite/posts/</link>
+    <link>http://localhost:1313/static_E2Esite/posts/</link>
     <description>Recent content in Posts on 業務連絡フロー</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://a-sakagami.github.io/static_E2Esite/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/static_E2Esite/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
