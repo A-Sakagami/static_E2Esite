@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/static_E2Esite/posts/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/posts/</loc>
     <lastmod>2025-01-06T12:18:21+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/</loc>
     <lastmod>2025-01-06T12:18:21+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/admin/admin/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/about/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/admin/admin/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/admin/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/admin/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/categories/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/contact/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/login/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/login/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/login/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/login/</loc>
   </url><url>
-    <loc>http://localhost:1313/static_E2Esite/tags/</loc>
+    <loc>https://a-sakagami.github.io/static_E2Esite/tags/</loc>
   </url>
 </urlset>
