@@ -47,10 +47,9 @@ header nav a:hover {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* タイトルとメニューを縦並びに */
-        align-items: flex-start; /* 左詰め */
-        height: auto;
         padding: 10px;
+        flex-direction: column; /* 小さい画面では縦並び */
+        align-items: flex-start;
     }
 
     header .logo {
