@@ -37,6 +37,10 @@
     background-color: #45a049;
 }
 
+#loginForm {
+    display: block; /* 確実にフォームが表示されるように指定 */
+}
+
 @media (max-width: 768px) {
     .login-container {
         width: 90%; /* モバイル画面で幅を広げる */

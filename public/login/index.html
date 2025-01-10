@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head><script src="/static_E2Esite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=static_E2Esite/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://a-sakagami.github.io/static_E2Esite/css/style.css" rel="stylesheet">
-    <link href="https://a-sakagami.github.io/static_E2Esite/css/header.css" rel="stylesheet">
-    <link href="https://a-sakagami.github.io/static_E2Esite/css/footer.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
     
-        <link rel="stylesheet" href="https://a-sakagami.github.io/static_E2Esite/css/loginstyle.css"> 
+        <link rel="stylesheet" href="http://localhost:1313/static_E2Esite/css/loginstyle.css"> 
     
-    <script defer src="https://a-sakagami.github.io/static_E2Esite/js/main.js"></script>
+    <script defer src="http://localhost:1313/static_E2Esite/js/main.js"></script>
 </head>
 <body>
     <header>
     <div class="logo" data-test-id="logo">Login</div>
     <nav>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
-            <li><a href="https://a-sakagami.github.io/static_E2Esite/">Home</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
             <li><a href="/static_E2Esite/about/">About</a></li>
             <li><a href="/static_E2Esite/contact/">Contact</a></li>
             <li><a id="auth-menu" href="/static_E2Esite/login/">Login</a></li>
@@ -45,22 +45,42 @@
             });
         } else {
             
-            authMenu.textContent = "ログイン";
-            authMenu.href = "/login/";
+            authMenu.textContent = "Login";
+            authMenu.href = "https://a-sakagami.github.io/static_E2Esite/login/";
         }
     });
 </script>
   
     <main>
         
-    <article>
-    <h2>Login</h2>
-    <div>
-        <h1 id="ログインフォーム">ログインフォーム</h1>
-<p>以下のフォームに必要事項を入力してください。</p>
+<div class="login-container">
+    <h2>ログイン</h2>
+    <form id="loginForm">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">ログイン</button>
+    </form>
+</div>
+<script>
+    console.log("loginForm:", loginForm); 
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    </div>
-    </article>
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        
+        if (username === "admin" && password === "admin") {
+            localStorage.setItem("userType", "admin");
+            alert("ログインしました。");
+            window.location.href = "/";
+        } else {
+            alert("ログインに失敗しました。");
+        }
+    });
+</script>
 
     </main>
     <footer>

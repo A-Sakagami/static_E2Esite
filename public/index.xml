@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workflow Tool on 業務連絡フロー</title>
-    <link>https://a-sakagami.github.io/static_E2Esite/</link>
+    <link>http://localhost:1313/static_E2Esite/</link>
     <description>Recent content in Workflow Tool on 業務連絡フロー</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://a-sakagami.github.io/static_E2Esite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/static_E2Esite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
-      <link>https://a-sakagami.github.io/static_E2Esite/about/</link>
+      <link>http://localhost:1313/static_E2Esite/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://a-sakagami.github.io/static_E2Esite/about/</guid>
+      <guid>http://localhost:1313/static_E2Esite/about/</guid>
       <description>&lt;h1 id=&#34;このサイトについて&#34;&gt;このサイトについて&lt;/h1&gt;&#xA;&lt;p&gt;このサイトは、エンドツーエンドのテストをサポートするために作成されました。ここでは、テストの実行方法やベストプラクティスについての情報を提供しています。&lt;/p&gt;&#xA;&lt;h2 id=&#34;主な機能&#34;&gt;主な機能&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;テストの自動化&lt;/li&gt;&#xA;&lt;li&gt;テスト結果のレポート&lt;/li&gt;&#xA;&lt;li&gt;テストケースの管理&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;お問い合わせ&#34;&gt;お問い合わせ&lt;/h2&gt;&#xA;&lt;p&gt;ご質問やフィードバックがありましたら、お気軽にお問い合わせください。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;メール: &lt;a href=&#34;mailto:sakagami@genz.jp&#34;&gt;sakagami@genz.jp&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Admin</title>
-      <link>https://a-sakagami.github.io/static_E2Esite/admin/</link>
+      <link>http://localhost:1313/static_E2Esite/admin/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://a-sakagami.github.io/static_E2Esite/admin/</guid>
+      <guid>http://localhost:1313/static_E2Esite/admin/admin/</guid>
       <description>&lt;h1 id=&#34;管理者用ページ&#34;&gt;管理者用ページ&lt;/h1&gt;&#xA;&lt;p&gt;このページは管理者専用の情報を含みます。以下はドラフトの内容です。&lt;/p&gt;&#xA;&lt;h2 id=&#34;セクション1-ワークフロー&#34;&gt;セクション1: ワークフロー&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ユーザーが送信したテキスト内容の承認/否認&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;セクション2-サイト設定&#34;&gt;セクション2: サイト設定&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;サイトのテーマ変更&lt;/li&gt;&#xA;&lt;li&gt;ナビゲーションメニューの編集&lt;/li&gt;&#xA;&lt;li&gt;サイトのバックアップと復元&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;セクション3-レポート&#34;&gt;セクション3: レポート&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ユーザーアクティビティレポート&lt;/li&gt;&#xA;&lt;li&gt;サイトパフォーマンスレポート&lt;/li&gt;&#xA;&lt;li&gt;エラーログの確認&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;セクション4-その他&#34;&gt;セクション4: その他&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;管理者アカウントの設定&lt;/li&gt;&#xA;&lt;li&gt;セキュリティ設定の更新&lt;/li&gt;&#xA;&lt;li&gt;サポートへの連絡&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;このページの内容は随時更新される予定です。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>https://a-sakagami.github.io/static_E2Esite/contact/</link>
+      <link>http://localhost:1313/static_E2Esite/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://a-sakagami.github.io/static_E2Esite/contact/</guid>
+      <guid>http://localhost:1313/static_E2Esite/contact/</guid>
       <description>&lt;h1 id=&#34;お問い合わせページ&#34;&gt;お問い合わせページ&lt;/h1&gt;&#xA;&lt;p&gt;こちらのページからお問い合わせいただけます。以下のフォームに必要事項をご記入の上、送信してください。&lt;/p&gt;&#xA;&lt;h2 id=&#34;お問い合わせフォーム&#34;&gt;お問い合わせフォーム&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;お名前&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;メールアドレス&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;お問い合わせ内容&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;送信ボタンを押すと、担当者が確認次第ご連絡いたします。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: 個人情報は厳重に管理し、第三者に提供することはありません。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Login</title>
-      <link>https://a-sakagami.github.io/static_E2Esite/login/</link>
+      <link>http://localhost:1313/static_E2Esite/login/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://a-sakagami.github.io/static_E2Esite/login/</guid>
+      <guid>http://localhost:1313/static_E2Esite/login/</guid>
       <description>&lt;h1 id=&#34;ログインフォーム&#34;&gt;ログインフォーム&lt;/h1&gt;&#xA;&lt;p&gt;以下のフォームに必要事項を入力してください。&lt;/p&gt;</description>
     </item>
   </channel>
