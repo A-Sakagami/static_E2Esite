@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (username === "admin" && password === "admin") {
               localStorage.setItem("userType", "admin");
               window.location.href = "/admin/";
+              alert("管理者ログイン成功");
           } else {
               localStorage.setItem("userType", "user");
               window.location.href = "/";
+              alert("ログイン成功");
           }
       });
   }
