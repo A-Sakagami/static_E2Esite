@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Params.description }}">
+  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+  <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
+  <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
+  <link href="{{ .Site.BaseURL }}css/adminstyle.css" rel="stylesheet">
+</head>
+<body>
+  {{ partial "header.html" . }}
+  {{ .Content }}
+  <div class="admin-container">
+    <h2>管理者用ページ</h2>
+    <p>メッセージ一覧</p>
+    <ul id="messageList"></ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const response = await fetch("/admin/messages");
+            const messages = await response.json();
+            const messageList = document.getElementById("messageList");
+
+            messages.forEach((message) => {
+                const li = document.createElement("li");
+                li.textContent = `User ${message.userId}: ${message.message}`;
+                messageList.appendChild(li);
+            });
+        });
+    </script>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
+</html>
