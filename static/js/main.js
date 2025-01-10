@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
           // ダミーのログイン認証処理
           if (username === "admin" && password === "admin") {
               localStorage.setItem("userType", "admin");
-              window.location.href = "/admin/";
+              window.location.href = "https://a-sakagami.github.io/static_E2Esite/admin/";
               alert("管理者ログイン成功");
           } else {
               localStorage.setItem("userType", "user");
-              window.location.href = "/";
+              window.location.href = "https://a-sakagami.github.io/static_E2Esite/";
               alert("ログイン成功");
           }
       });
