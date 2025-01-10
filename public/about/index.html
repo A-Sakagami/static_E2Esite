@@ -18,12 +18,36 @@
             <li><a href="https://a-sakagami.github.io/static_E2Esite/">Home</a></li>
             <li><a href="/static_E2Esite/about/">About</a></li>
             <li><a href="/static_E2Esite/contact/">Contact</a></li>
-            <li><a href="/static_E2Esite/login/">Login</a></li>
-            <li><a href="/static_E2Esite/logout/" style="display: none;">Logout</a></li>
+            <li><a id="auth-menu" href="/static_E2Esite/login/">Login</a></li>
             <li><a href="/static_E2Esite/admin/" style="display: none;">Admin</a></li>
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const authMenu = document.getElementById("auth-menu");
+
+        
+        const userType = localStorage.getItem("userType");
+
+        if (userType) {
+            
+            authMenu.textContent = "Logout";
+            authMenu.href = "#";
+            authMenu.addEventListener("click", () => {
+                
+                localStorage.removeItem("userType");
+                alert("ログアウトしました。");
+                window.location.reload();
+            });
+        } else {
+            
+            authMenu.textContent = "ログイン";
+            authMenu.href = "/login/";
+        }
+    });
+</script>
   
     <main>
         
