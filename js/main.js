@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 管理者ページの処理
-  if (path.incledes("admin")) {
+  if (path.includes("admin")) {
       const messageList = document.getElementById("messageList");
 
       // ダミーデータを取得（サーバー実装が必要）
