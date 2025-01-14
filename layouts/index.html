@@ -5,10 +5,11 @@
   <div data-test-id="login-button" id="login-screen">
     <button id="login-button">ログイン</button>
   </div>
-  <div data-test-id="user-area" id="user-area" style="display: none;">
-    <textarea id="message" placeholder="ここに入力してください..."></textarea>
-    <button id="sendMessage">送信</button>
-  </div>
+  <form data-test-id="user-area" id="user-area" style="display: none;">
+    <textarea id="post-content" placeholder="ここに入力してください..."></textarea><br>
+    <button type="submit" id="postMessage">送信</button>
+  </form>
+  <div id="post-list"></div>
 </article>
 <!-- トップページ専用のスクリプトを読み込む -->
 <script defer src="{{ .Site.BaseURL }}js/index.js"></script>

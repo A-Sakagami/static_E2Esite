@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     console.log("DOM が完全にロードされました");
 
-    if (loginForm) {
+    /* if (loginForm) {
         console.log("loginForm が見つかりました:", loginForm);
     } else {
         console.error("loginForm が見つかりません");
-    }
+    }*/
     document.getElementById("loginForm").addEventListener("submit", (event) => {
         event.preventDefault();
 
