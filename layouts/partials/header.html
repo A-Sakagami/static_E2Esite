@@ -28,7 +28,7 @@
                 // ログアウト処理
                 localStorage.removeItem("userType");
                 alert("ログアウトしました。");
-                window.location.reload();
+                window.location.href = baseURL;
             });
         } else {
             // ログアウト中の場合
