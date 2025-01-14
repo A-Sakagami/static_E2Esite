@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   
     console.log("DOM が完全にロードされました");
 
-    if (loginForm) {
+    /* if (loginForm) {
         console.log("loginForm が見つかりました:", loginForm);
     } else {
         console.error("loginForm が見つかりません");
-    }
+    }*/
     document.getElementById("loginForm").addEventListener("submit", (event) => {
         event.preventDefault();
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        // 簡易的な認証処理
+        // 簡易的な認証処理（更新予定：任意のアカウントを追加・管理者と一般の選択式）
         if (username === "admin" && password === "admin") {
             localStorage.setItem("userType", "admin");
             alert("管理者でログインしました。");
@@ -67,4 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("ハンバーガーメニューの要素が見つかりません");
     }
+
+    // ログイン状態をチェックしてformとdiv要素を表示
+    if (userType === "user") {
+        document.getElementById("userForm").style.display = "block";
+        document.getElementById("userDiv").style.display = "block";
+    }
 });
+
+function handleButtonClick() {
+    const userInput = document.getElementById('userInput').value;
+    alert('入力された内容: ' + userInput);
+}
