@@ -5,14 +5,14 @@
 ```
 .github
 archetypes
-assets
+~assets~
 content
 data
-i18n
+~i18n~
 layouts
 public
 static
-themes
+~themes~
 .gitignore
 .hugo_build.lock
 .nojekyll
