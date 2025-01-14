@@ -2,6 +2,7 @@
 テスト自動化用E2Eサイト
 
 ## ディレクトリ構造
+```
 .github
 archetypes
 assets
@@ -18,6 +19,7 @@ themes
 config.toml
 LICENSE
 README.md
+```
 
 ## ダウンロード
 ```shell
