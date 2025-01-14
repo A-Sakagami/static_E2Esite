@@ -2,24 +2,23 @@
 テスト自動化用E2Eサイト
 
 ## ディレクトリ構造
-```
-.github
-archetypes
-~assets~
-content
-data
-~i18n~
-layouts
-public
-static
-~themes~
-.gitignore
-.hugo_build.lock
-.nojekyll
-config.toml
-LICENSE
-README.md
-```
+- .github
+- archetypes
+- ~~assets~~
+- content
+- ~~data~~
+- ~~i18n~~
+- layouts
+- public
+- static
+- ~~themes~~
+- .gitignore
+- .hugo_build.lock
+- .nojekyll
+- config.toml
+- LICENSE
+- README.md
+
 
 ## ダウンロード
 ```shell
