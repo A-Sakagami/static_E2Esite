@@ -15,13 +15,14 @@
       const loginButton = document.getElementById("login-button");
       const loginScreen = document.getElementById("login-screen");
       const userArea = document.getElementById("user-area");
+      const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/"; 
 
       
       const userType = localStorage.getItem("userType");
 
       if (userType === "admin") {
           
-          window.location.href = "https://a-sakagami.github.io/static_E2Esite/admin/"; 
+          window.location.href = baseURL + "admin/"; 
       } else if (userType === "user") {
           
           loginScreen.style.display = "none";
@@ -29,7 +30,7 @@
       } else {
           
           loginButton.addEventListener("click", () => {
-          window.location.href = "https://a-sakagami.github.io/static_E2Esite/login/"; 
+          window.location.href = baseURL + "/login/"; 
         });
       }
     });
@@ -52,6 +53,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const authMenu = document.getElementById("auth-menu");
+        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/";
+        console.log(baseURL);
 
         
         const userType = localStorage.getItem("userType");
@@ -69,7 +72,7 @@
         } else {
             
             authMenu.textContent = "Login";
-            authMenu.href = "https://a-sakagami.github.io/static_E2Esite/login/";
+            authMenu.href = baseURL + "login/";
         }
     });
 </script>

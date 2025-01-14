@@ -14,13 +14,14 @@
       const loginButton = document.getElementById("login-button");
       const loginScreen = document.getElementById("login-screen");
       const userArea = document.getElementById("user-area");
+      const baseURL = "{{ .Site.BaseURL }}"; // ベース URL を取得
 
       // ログイン種別の取得
       const userType = localStorage.getItem("userType");
 
       if (userType === "admin") {
           // 管理者用エリアを表示
-          window.location.href = "https://a-sakagami.github.io/static_E2Esite/admin/"; // admin.html に遷移
+          window.location.href = baseURL + "admin/"; // admin.html に遷移
       } else if (userType === "user") {
           // 一般ユーザー用エリアを表示
           loginScreen.style.display = "none";
@@ -28,7 +29,7 @@
       } else {
           // 初期画面
           loginButton.addEventListener("click", () => {
-          window.location.href = "https://a-sakagami.github.io/static_E2Esite/login/"; // login.html に遷移
+          window.location.href = baseURL + "/login/"; // login.html に遷移
         });
       }
     });
