@@ -1,73 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Params.description }}">
-  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
-  <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
-  <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
-  <!-- ユーザー別の表示分けJavascript -->
-  <script>
-    // 初期化
-    document.addEventListener("DOMContentLoaded", () => {
-      const loginButton = document.getElementById("login-button");
-      const loginScreen = document.getElementById("login-screen");
-      const userArea = document.getElementById("user-area");
-      const baseURL = "{{ .Site.BaseURL }}"; // ベース URL を取得
-
-      // ログイン種別の取得
-      const userType = localStorage.getItem("userType");
-
-      if (userType === "admin") {
-          // 管理者用エリアを表示
-          window.location.href = baseURL + "admin/"; // admin.html に遷移
-      } else if (userType === "user") {
-          // 一般ユーザー用エリアを表示
-          loginScreen.style.display = "none";
-          userArea.style.display = "block";
-      } else {
-          // 初期画面
-          loginButton.addEventListener("click", () => {
-          window.location.href = baseURL + "login/"; // login.html に遷移
-        });
-      }
-    });
-  </script> 
-</head>
-<body>
-    {{ partial "header.html" . }}
-    <main>
-      <article>
-        {{ .Content }}
-        <!-- 初期画面 -->
-        <div data-test-id="login-button" id="login-screen">
-          <button id="login-button">ログイン</button>
-        </div>
-        <div data-test-id="user-area" id="user-area" style="display: none;">
-          <textarea id="message" placeholder="ここに入力してください..."></textarea>
-          <button id="sendMessage">送信</button>
-        </div>
-        <!-- テキストメッセージ送信のJavascript -->
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-              const user = JSON.parse(localStorage.getItem("user"));
-              if (user && user.role === "user") {
-                  document.getElementById("user-area").style.display = "block";
-                  document.getElementById("sendMessage").addEventListener("click", async () => {
-                      const message = document.getElementById("message").value;
-                      await fetch("/submit-message", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ userName: user.name, message }),
-                      });
-                      alert("メッセージが送信されました");
-                  });
-              }
-          });
-        </script>
-      </article>
-    </main>
-    {{ partial "footer.html" . }}
-</body>
-</html>
+{{ define "main" }}
+<article>
+  {{ .Content }}
+  <!-- 初期画面 -->
+  <div data-test-id="login-button" id="login-screen">
+    <button id="login-button">ログイン</button>
+  </div>
+  <div data-test-id="user-area" id="user-area" style="display: none;">
+    <textarea id="message" placeholder="ここに入力してください..."></textarea>
+    <button id="sendMessage">送信</button>
+  </div>
+</article>
+<!-- トップページ専用のスクリプトを読み込む -->
+<script defer src="{{ .Site.BaseURL }}js/index.js"></script>
+{{ end }}

@@ -8,8 +8,9 @@
     <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
     <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
     
+    
     <script>
-        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/"; 
+        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/";
     </script>
     <script defer src="http://localhost:1313/static_E2Esite/js/main.js"></script>
 </head>
@@ -19,40 +20,13 @@
     <nav>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
-            <li><a href="/static_E2Esite/about/">About</a></li>
-            <li><a href="/static_E2Esite/contact/">Contact</a></li>
-            <li><a id="auth-menu" href="/static_E2Esite/login/">Login</a></li>
-            <li><a href="/static_E2Esite/admin/" style="display: none;">Admin</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//about">About</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//contact">Contact</a></li>
+            <li><a id="auth-menu" href="http://localhost:1313/static_E2Esite//login">Login</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//admin" style="display: none;">Admin</a></li>
         </ul>
     </nav>
 </header>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const authMenu = document.getElementById("auth-menu");
-        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/";
-        console.log(baseURL);
-
-        
-        const userType = localStorage.getItem("userType");
-
-        if (userType) {
-            
-            authMenu.textContent = "Logout";
-            authMenu.href = "#";
-            authMenu.addEventListener("click", () => {
-                
-                localStorage.removeItem("userType");
-                alert("ログアウトしました。");
-                window.location.reload();
-            });
-        } else {
-            
-            authMenu.textContent = "Login";
-            authMenu.href = baseURL + "login/";
-        }
-    });
-</script>
   
     <main>
         

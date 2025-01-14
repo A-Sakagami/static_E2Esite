@@ -3,38 +3,11 @@
     <nav>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            <li><a href="{{ "about/" | relURL }}">About</a></li>
-            <li><a href="{{ "contact/" | relURL }}">Contact</a></li>
-            <li><a id="auth-menu" href="{{ "login/" | relURL }}">Login</a></li>
-            <li><a href="{{ "admin/" | relURL }}" style="display: none;">Admin</a></li>
+            <li><a href="{{ .Site.BaseURL }}/about">About</a></li>
+            <li><a href="{{ .Site.BaseURL }}/contact">Contact</a></li>
+            <li><a id="auth-menu" href="{{ .Site.BaseURL }}/login">Login</a></li>
+            <li><a href="{{ .Site.BaseURL }}/admin" style="display: none;">Admin</a></li>
         </ul>
     </nav>
 </header>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const authMenu = document.getElementById("auth-menu");
-        const baseURL = "{{ .Site.BaseURL }}";
-        console.log(baseURL);
-
-        // ログイン状態を確認
-        const userType = localStorage.getItem("userType");
-
-        if (userType) {
-            // ログイン中の場合
-            authMenu.textContent = "Logout";
-            authMenu.href = "#";
-            authMenu.addEventListener("click", () => {
-                // ログアウト処理
-                localStorage.removeItem("userType");
-                alert("ログアウトしました。");
-                window.location.href = baseURL;
-            });
-        } else {
-            // ログアウト中の場合
-            authMenu.textContent = "Login";
-            authMenu.href = baseURL + "login/";
-        }
-    });
-</script>
   

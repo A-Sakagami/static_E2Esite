@@ -32,10 +32,22 @@
   
     <main>
         
-    <article>
-    <h2>Admin</h2>
-    <div>
-        <h1 id="管理者用ページ">管理者用ページ</h1>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        const userType = localStorage.getItem("userType");
+
+        if (userType !== "admin") {
+            
+            alert("管理者権限が必要です。ログインしてください。");
+            window.location.href = "/login/";
+        }
+    });
+</script>
+<div class="admin-container">
+    <h2>管理者専用ページ</h2>
+    <p>ここに管理者用のコンテンツを表示します。</p>
+    <h1 id="管理者用ページ">管理者用ページ</h1>
 <p>このページは管理者専用の情報を含みます。以下はドラフトの内容です。</p>
 <h2 id="セクション1-ワークフロー">セクション1: ワークフロー</h2>
 <ul>
@@ -61,8 +73,7 @@
 </ul>
 <p>このページの内容は随時更新される予定です。</p>
 
-    </div>
-    </article>
+</div>
 
     </main>
     <footer>

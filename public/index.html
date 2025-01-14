@@ -1,40 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 	<meta name="generator" content="Hugo 0.136.5"><script src="/static_E2Esite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=static_E2Esite/livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <title>Workflow Tool</title>
-  <meta name="description" content="">
-  <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
-  <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
-  <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
-  
-  <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Tool</title>
+    <link href="http://localhost:1313/static_E2Esite/css/style.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/header.css" rel="stylesheet">
+    <link href="http://localhost:1313/static_E2Esite/css/footer.css" rel="stylesheet">
     
-    document.addEventListener("DOMContentLoaded", () => {
-      const loginButton = document.getElementById("login-button");
-      const loginScreen = document.getElementById("login-screen");
-      const userArea = document.getElementById("user-area");
-      const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/"; 
-
-      
-      const userType = localStorage.getItem("userType");
-
-      if (userType === "admin") {
-          
-          window.location.href = baseURL + "admin/"; 
-      } else if (userType === "user") {
-          
-          loginScreen.style.display = "none";
-          userArea.style.display = "block";
-      } else {
-          
-          loginButton.addEventListener("click", () => {
-          window.location.href = baseURL + "/login/"; 
-        });
-      }
-    });
-  </script> 
+    
+    <script>
+        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/";
+    </script>
+    <script defer src="http://localhost:1313/static_E2Esite/js/main.js"></script>
 </head>
 <body>
     <header>
@@ -42,44 +21,18 @@
     <nav>
         <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
             <li><a href="http://localhost:1313/static_E2Esite/">Home</a></li>
-            <li><a href="/static_E2Esite/about/">About</a></li>
-            <li><a href="/static_E2Esite/contact/">Contact</a></li>
-            <li><a id="auth-menu" href="/static_E2Esite/login/">Login</a></li>
-            <li><a href="/static_E2Esite/admin/" style="display: none;">Admin</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//about">About</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//contact">Contact</a></li>
+            <li><a id="auth-menu" href="http://localhost:1313/static_E2Esite//login">Login</a></li>
+            <li><a href="http://localhost:1313/static_E2Esite//admin" style="display: none;">Admin</a></li>
         </ul>
     </nav>
 </header>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const authMenu = document.getElementById("auth-menu");
-        const baseURL = "http:\/\/localhost:1313\/static_E2Esite\/";
-        console.log(baseURL);
-
-        
-        const userType = localStorage.getItem("userType");
-
-        if (userType) {
-            
-            authMenu.textContent = "Logout";
-            authMenu.href = "#";
-            authMenu.addEventListener("click", () => {
-                
-                localStorage.removeItem("userType");
-                alert("ログアウトしました。");
-                window.location.reload();
-            });
-        } else {
-            
-            authMenu.textContent = "Login";
-            authMenu.href = baseURL + "login/";
-        }
-    });
-</script>
   
     <main>
-      <article>
-        <h2 id="サイトのメインコンテンツ">サイトのメインコンテンツ</h2>
+        
+<article>
+  <h2 id="サイトのメインコンテンツ">サイトのメインコンテンツ</h2>
 <p>ようこそ！このサイトはHugoを使って作成されています。</p>
 <ul>
 <li><strong>高速で軽量</strong></li>
@@ -87,33 +40,18 @@
 <li><strong>柔軟なカスタマイズ</strong></li>
 </ul>
 
-        
-        <div data-test-id="login-button" id="login-screen">
-          <button id="login-button">ログイン</button>
-        </div>
-        <div data-test-id="user-area" id="user-area" style="display: none;">
-          <textarea id="message" placeholder="ここに入力してください..."></textarea>
-          <button id="sendMessage">送信</button>
-        </div>
-        
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-              const user = JSON.parse(localStorage.getItem("user"));
-              if (user && user.role === "user") {
-                  document.getElementById("user-area").style.display = "block";
-                  document.getElementById("sendMessage").addEventListener("click", async () => {
-                      const message = document.getElementById("message").value;
-                      await fetch("/submit-message", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ userName: user.name, message }),
-                      });
-                      alert("メッセージが送信されました");
-                  });
-              }
-          });
-        </script>
-      </article>
+  
+  <div data-test-id="login-button" id="login-screen">
+    <button id="login-button">ログイン</button>
+  </div>
+  <div data-test-id="user-area" id="user-area" style="display: none;">
+    <textarea id="message" placeholder="ここに入力してください..."></textarea>
+    <button id="sendMessage">送信</button>
+  </div>
+</article>
+
+<script defer src="http://localhost:1313/static_E2Esite/js/index.js"></script>
+
     </main>
     <footer>
     <p>© 2024 My Hugo Site</p>

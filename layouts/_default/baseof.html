@@ -7,13 +7,14 @@
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
-    {{ if eq .File.BaseFileName "login" }}
+    {{ if strings.Contains .File.Path "login" }}
         <link rel="stylesheet" href="{{ .Site.BaseURL }}css/loginstyle.css"> <!-- loginページ専用CSS -->
-    {{ else if eq .File.BaseFileName "admin" }}
+    {{ else if strings.Contains .File.Path "admin" }}
         <link rel="stylesheet" href="{{ .Site.BaseURL }}css/adminstyle.css"> <!-- adminページ専用CSS -->
     {{ end }}
+    <!-- 共通のベースURL定義 -->
     <script>
-        const baseURL = "{{ .Site.BaseURL }}"; // ベース URL を取得
+        const baseURL = "{{ .Site.BaseURL }}";
     </script>
     <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
 </head>
