@@ -47,7 +47,6 @@ main {
   flex: 1; /* コンテンツエリアをフッター以外に伸縮させる */
   padding: 20px;
   box-sizing: border-box; /* パディングを含むサイズ計算 */
-  overflow: auto; /* コンテンツが画面外にあふれる場合はスクロール */
   margin-top: 60px; /* ヘッダーの高さ分の余白を追加 */
   margin-bottom: 60px; /* フッターの高さ分の余白を追加 */
 }

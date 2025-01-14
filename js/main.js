@@ -55,5 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
         authMenu.textContent = "Login";
         authMenu.href = baseURL + "login/";
     }
-});
 
+    // ハンバーガーメニューのスクリプト
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navUl = document.querySelector('header nav ul');
+
+    if (hamburger && navUl) {
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+    } else {
+        console.error("ハンバーガーメニューの要素が見つかりません");
+    }
+});
