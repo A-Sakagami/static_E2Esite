@@ -1,12 +1,10 @@
 /* メインのcss */
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+
+/* bodyとhtmlの幅を設定 */
+html, body {
+  width: 100%;
   margin: 0;
-  background-color: #f8f9fa; /* 背景色の調整（任意） */
+  overflow-x: hidden; /* 横スクロールを隠す */
 }
 
 h1 h2{

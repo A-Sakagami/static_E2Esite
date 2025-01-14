@@ -3,7 +3,7 @@ header {
     display: flex;
     justify-content: space-between; /* タイトルとメニューを左右に分ける */
     align-items: center; /* 高さを揃える */
-    padding: 10px 20px; /* 左右に余白を設ける */
+    padding: 20px 20px; /* 左右に余白を設ける */
     background-color: #ffffff; /* 背景色 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 下に影を追加 */
     position: sticky; /* 固定位置 */
