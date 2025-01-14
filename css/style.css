@@ -43,10 +43,22 @@ article button:hover {
 
 main {
   flex: 1; /* コンテンツエリアをフッター以外に伸縮させる */
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box; /* パディングを含むサイズ計算 */
   margin-top: 60px; /* ヘッダーの高さ分の余白を追加 */
   margin-bottom: 60px; /* フッターの高さ分の余白を追加 */
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
