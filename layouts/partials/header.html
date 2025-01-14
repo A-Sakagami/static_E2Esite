@@ -1,7 +1,12 @@
 <header>
     <div class="logo" data-test-id="logo">{{ .Title }}</div>
     <nav>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
             <li><a href="{{ .Site.BaseURL }}">Home</a></li>
             <li><a href="{{ .Site.BaseURL }}/about">About</a></li>
             <li><a href="{{ .Site.BaseURL }}/contact">Contact</a></li>
@@ -9,5 +14,6 @@
             <li><a href="{{ .Site.BaseURL }}/admin" style="display: none;">Admin</a></li>
         </ul>
     </nav>
+    </div>
 </header>
   
