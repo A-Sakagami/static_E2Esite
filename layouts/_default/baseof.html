@@ -14,7 +14,7 @@
     {{ end }}
     <!-- 共通のベースURL定義 -->
     <script>
-        const baseURL = "{{ .Site.BaseURL }}";
+        const baseURL = window.location.origin + "/";
     </script>
     <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
 </head>
