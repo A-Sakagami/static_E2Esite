@@ -10,31 +10,7 @@
 &lt;p>ご質問やフィードバックがありましたら、お気軽にお問い合わせください。&lt;/p>
 &lt;ul>
 &lt;li>メール: &lt;a href="mailto:sakagami@genz.jp">sakagami@genz.jp&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Admin</title><link>https://a-sakagami.github.io/static_E2Esite/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/admin/</guid><description>&lt;h1 id="管理者用ページ">管理者用ページ&lt;/h1>
-&lt;p>このページは管理者専用の情報を含みます。以下はドラフトの内容です。&lt;/p>
-&lt;h2 id="セクション1-ワークフロー">セクション1: ワークフロー&lt;/h2>
-&lt;ul>
-&lt;li>ユーザーが送信したテキスト内容の承認/否認&lt;/li>
-&lt;/ul>
-&lt;h2 id="セクション2-サイト設定">セクション2: サイト設定&lt;/h2>
-&lt;ul>
-&lt;li>サイトのテーマ変更&lt;/li>
-&lt;li>ナビゲーションメニューの編集&lt;/li>
-&lt;li>サイトのバックアップと復元&lt;/li>
-&lt;/ul>
-&lt;h2 id="セクション3-レポート">セクション3: レポート&lt;/h2>
-&lt;ul>
-&lt;li>ユーザーアクティビティレポート&lt;/li>
-&lt;li>サイトパフォーマンスレポート&lt;/li>
-&lt;li>エラーログの確認&lt;/li>
-&lt;/ul>
-&lt;h2 id="セクション4-その他">セクション4: その他&lt;/h2>
-&lt;ul>
-&lt;li>管理者アカウントの設定&lt;/li>
-&lt;li>セキュリティ設定の更新&lt;/li>
-&lt;li>サポートへの連絡&lt;/li>
-&lt;/ul>
-&lt;p>このページの内容は随時更新される予定です。&lt;/p></description></item><item><title>Contact</title><link>https://a-sakagami.github.io/static_E2Esite/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/contact/</guid><description>&lt;h1 id="お問い合わせページ">お問い合わせページ&lt;/h1>
+&lt;/ul></description></item><item><title>Contact</title><link>https://a-sakagami.github.io/static_E2Esite/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/contact/</guid><description>&lt;h1 id="お問い合わせページ">お問い合わせページ&lt;/h1>
 &lt;p>こちらのページからお問い合わせいただけます。以下のフォームに必要事項をご記入の上、送信してください。&lt;/p>
 &lt;h2 id="お問い合わせフォーム">お問い合わせフォーム&lt;/h2>
 &lt;ul>
@@ -43,5 +19,4 @@
 &lt;li>&lt;strong>お問い合わせ内容&lt;/strong>:&lt;/li>
 &lt;/ul>
 &lt;p>送信ボタンを押すと、担当者が確認次第ご連絡いたします。&lt;/p>
-&lt;p>&lt;strong>注意&lt;/strong>: 個人情報は厳重に管理し、第三者に提供することはありません。&lt;/p></description></item><item><title>Login</title><link>https://a-sakagami.github.io/static_E2Esite/login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://a-sakagami.github.io/static_E2Esite/login/</guid><description>&lt;h1 id="ログインフォーム">ログインフォーム&lt;/h1>
-&lt;p>以下のフォームに必要事項を入力してください。&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>注意&lt;/strong>: 個人情報は厳重に管理し、第三者に提供することはありません。&lt;/p></description></item></channel></rss>
