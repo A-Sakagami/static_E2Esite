@@ -14,6 +14,25 @@
 <div class="admin-container">
     <h2>管理者専用ページ</h2>
     <p>ここに管理者用のコンテンツを表示します。</p>
+    <div class="stored-strings">
+        <h3>保存された文字列</h3>
+        <ul id="storedStringsList"></ul>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const storedStringsList = document.getElementById("storedStringsList");
+            const keys = Object.keys(localStorage);
+            
+            keys.forEach(key => {
+                if (key.startsWith("posts")) {
+                    const li = document.createElement("li");
+                    li.textContent = localStorage.getItem(key);
+                    storedStringsList.appendChild(li);
+                }
+            });
+        });
+    </script>
+
     {{ .Content }}
 </div>
 {{ end }}
