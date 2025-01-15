@@ -1,16 +1,4 @@
 {{ define "main" }}
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // ログイン状態をチェック
-        const userType = localStorage.getItem("userType");
-
-        if (userType !== "admin") {
-            // 管理者でない場合、ログインページにリダイレクト
-            alert("管理者権限が必要です。ログインしてください。");
-            window.location.href = "/login/";
-        }
-    });
-</script>
 <div class="admin-container">
     <h2>管理者専用ページ</h2>
     <p>ここに管理者用のコンテンツを表示します。</p>
@@ -18,22 +6,8 @@
         <h3>保存された文字列</h3>
         <ul id="storedStringsList"></ul>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const storedStringsList = document.getElementById("storedStringsList");
-            const keys = Object.keys(localStorage);
-            
-            keys.forEach(key => {
-                if (key.startsWith("posts")) {
-                    const li = document.createElement("li");
-                    li.textContent = localStorage.getItem(key);
-                    storedStringsList.appendChild(li);
-                }
-            });
-        });
-    </script>
-
     {{ .Content }}
 </div>
+<!-- 管理者ページ専用のスクリプトを読み込む -->
+<script defer src="{{ .Site.BaseURL }}js/admin.js"></script>
 {{ end }}
-

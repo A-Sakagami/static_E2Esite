@@ -70,5 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (userType === "user") {
         document.getElementById("userForm").style.display = "block";
         document.getElementById("userDiv").style.display = "block";
+        document.getElementById("post-list").style.display = "block";
     }
 });
