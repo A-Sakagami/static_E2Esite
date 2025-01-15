@@ -29,15 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
         storedStringsList.appendChild(li);
 
         li.querySelector(".approve-btn").addEventListener("click", () => {
-        alert(`${text} が承認されました。`);
-        // 承認処理をここに追加
-        localStorage.setItem(key + "_approved", "true");
+        if (!localStorage.getItem(key + "_approved")) {
+            alert(`${text} が承認されました。`);
+            // 承認処理をここに追加
+        }
         });
 
         li.querySelector(".deny-btn").addEventListener("click", () => {
-        alert(`${text} が否認されました。`);
-        // 否認処理をここに追加
-        localStorage.setItem(key + "_denied", "true");
+        if (!localStorage.getItem(key + "_denied")) {
+            alert(`${text} が否認されました。`);
+            // 否認処理をここに追加
+
+        }
         });
     }
     });
