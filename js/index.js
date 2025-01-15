@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
- 
+/** 
+ * ローカルストレージに文字列を保存・一覧として表示 
+ */
 document.getElementById('send-post').addEventListener('click', function(event) {
     event.preventDefault();
     const postInput = document.getElementById('postInput').value;
@@ -41,6 +43,11 @@ document.getElementById('send-post').addEventListener('click', function(event) {
     }
   });
 
+  /**
+  * ローカル・ストレージから投稿を取得し、'post-list'要素に表示します。
+  * 現在の 'post-list' の内容をクリアし、各投稿に対して新しい div 要素を作成します。
+  * 各投稿にはidとクラス名が割り当てられ、'post-list'に追加されます。
+  */
   function displayPosts() {
     const postList = document.getElementById('post-list');
     postList.innerHTML = '';
@@ -54,6 +61,7 @@ document.getElementById('send-post').addEventListener('click', function(event) {
     });
   }
 
+  // DOM読み込み完了後に関数を実行する
   document.addEventListener('DOMContentLoaded', function() {
     displayPosts();
   });
