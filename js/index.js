@@ -54,21 +54,41 @@ document.addEventListener("DOMContentLoaded", () => {
         postList.innerHTML = '';
         let posts = JSON.parse(localStorage.getItem('posts')) || [];
         if (posts.length > 0) {
-            posts.forEach(function(post, index) {
+            posts.forEach(function(post) {
                 const postItem = document.createElement('div');
-                postItem.id = 'post-' + index;
+                postItem.id = 'post-' + posts.indexOf(post);
                 postItem.className = 'user-post';
-                postItem.textContent = post.text;
+                postItem.textContent = post;
+                postList.appendChild(postItem);
 
                 if (post.approved) {
                     postItem.style.backgroundColor = 'lightgreen';
                 } else if (post.denyed) {
                     postItem.style.backgroundColor = 'lightcoral';
+                } else {
+                    postItem.style.backgroundColor = 'lightblue';
                 }
-
                 postList.appendChild(postItem);
             });
+
+            
             displayUserElements(); // 要素を表示
+        }
+    }
+
+    // ユーザー用の要素を表示する関数
+    function displayUserElements() {
+        const userForm = document.getElementById("userForm");
+        const userDiv = document.getElementById("userDiv");
+        if (userForm) {
+            userForm.style.display = "block";
+        } else {
+            console.error("userForm が見つかりません");
+        }
+        if (userDiv) {
+            userDiv.style.display = "block";
+        } else {
+            console.error("userDiv が見つかりません");
         }
     }
 });
