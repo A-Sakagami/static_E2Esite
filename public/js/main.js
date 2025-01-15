@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     const adminURL = baseURL + "admin/";
     const loginURL = baseURL + "login/";
-  
-    console.log("DOM が完全にロードされました");
 
     /* if (loginForm) {
         console.log("loginForm が見つかりました:", loginForm);
@@ -16,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        // 簡易的な認証処理
+        // 簡易的な認証処理（更新予定：任意のアカウントを追加・管理者と一般の選択式）
         if (username === "admin" && password === "admin") {
             localStorage.setItem("userType", "admin");
             alert("管理者でログインしました。");
@@ -66,5 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } else {
         console.error("ハンバーガーメニューの要素が見つかりません");
+    }
+
+    // ログイン状態をチェックしてformとdiv要素を表示
+    if (userType === "user") {
+        document.getElementById("userForm").style.display = "block";
+        document.getElementById("userDiv").style.display = "block";
     }
 });

@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     const adminURL = baseURL + "admin/";
     const loginURL = baseURL + "login/";
-  
-    console.log("DOM が完全にロードされました");
 
     /* if (loginForm) {
         console.log("loginForm が見つかりました:", loginForm);

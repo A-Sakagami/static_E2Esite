@@ -26,6 +26,57 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("login-button が見つかりませんでした。");
         }
     }
-});
- 
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 初期表示時に投稿を表示
+    displayPosts();
+
+    // ローカルストレージに文字列を保存・一覧として表示
+    document.getElementById('send-post').addEventListener('click', function(event) {
+        event.preventDefault();
+        const postInput = document.getElementById('postInput').value;
+        if (postInput) {
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts.push(postInput);
+            localStorage.setItem('posts', JSON.stringify(posts));
+            displayPosts();
+            document.getElementById('postInput').value = '';
+            displayUserElements(); // 要素を表示
+        }
+    });
+
+    // ローカル・ストレージから投稿を取得し、'post-list'要素に表示します。
+    function displayPosts() {
+        const postList = document.getElementById('post-list');
+        postList.innerHTML = '';
+        let posts = JSON.parse(localStorage.getItem('posts')) || [];
+        if (posts.length > 0) {
+            posts.forEach(function(post) {
+                const postItem = document.createElement('div');
+                postItem.id = 'post-' + posts.indexOf(post);
+                postItem.className = 'user-post';
+                postItem.textContent = post;
+                postList.appendChild(postItem);
+            });
+            displayUserElements(); // 要素を表示
+        }
+    }
+
+    // ユーザー用の要素を表示する関数
+    function displayUserElements() {
+        const userForm = document.getElementById("userForm");
+        const userDiv = document.getElementById("userDiv");
+        if (userForm) {
+            userForm.style.display = "block";
+        } else {
+            console.error("userForm が見つかりません");
+        }
+        if (userDiv) {
+            userDiv.style.display = "block";
+        } else {
+            console.error("userDiv が見つかりません");
+        }
+    }
+});
