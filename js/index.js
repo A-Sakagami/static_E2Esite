@@ -1,5 +1,4 @@
 // ユーザー別の表示分けJavascript
-
 // 初期化
 document.addEventListener("DOMContentLoaded", () => {
     const loginButton = document.getElementById("login-button");
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ローカル・ストレージから投稿を取得し、'post-list'要素に表示します。
+    // ローカル・ストレージから投稿を取得し、'post-list'要素に表示
     function displayPosts() {
         const postList = document.getElementById('post-list');
         postList.innerHTML = '';

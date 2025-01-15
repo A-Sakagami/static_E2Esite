@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const authMenu = document.getElementById("auth-menu");
-    console.log(baseURL);
+    // console.log(baseURL);
 
     // ログイン状態を確認
     const userType = localStorage.getItem("userType");
