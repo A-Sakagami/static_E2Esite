@@ -26,6 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("login-button が見つかりませんでした。");
         }
     }
+
 });
  
+document.getElementById('send-post').addEventListener('click', function(event) {
+    event.preventDefault();
+    const postInput = document.getElementById('postInput').value;
+    if (postInput) {
+      let posts = JSON.parse(localStorage.getItem('posts')) || [];
+      posts.push(postInput);
+      localStorage.setItem('posts', JSON.stringify(posts));
+      displayPosts();
+      document.getElementById('postInput').value = '';
+    }
+  });
 
+  function displayPosts() {
+    const postList = document.getElementById('post-list');
+    postList.innerHTML = '';
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.forEach(function(post) {
+    const postItem = document.createElement('div');
+    postItem.id = 'post-' + posts.indexOf(post);
+    postItem.className = 'user-post';
+      postItem.textContent = post;
+      postList.appendChild(postItem);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    displayPosts();
+  });

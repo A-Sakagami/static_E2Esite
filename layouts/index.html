@@ -6,10 +6,10 @@
     <button id="login-button">ログイン</button>
   </div>
   <form data-test-id="user-area" id="user-area" style="display: none;">
-    <textarea id="post-content" placeholder="ここに入力してください..."></textarea><br>
-    <button type="submit" id="postMessage" onclick="handleButtonClick()">送信</button>
+    <textarea id="postInput" placeholder="ここに入力してください..."></textarea><br>
+    <button type="submit" id="send-post">送信</button>
   </form>
-  <div id="post-list"></div>
+  <div class="post-list" id="post-list"></div>
 </article>
 <!-- トップページ専用のスクリプトを読み込む -->
 <script defer src="{{ .Site.BaseURL }}js/index.js"></script>

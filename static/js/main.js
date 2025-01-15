@@ -74,8 +74,3 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("userDiv").style.display = "block";
     }
 });
-
-function handleButtonClick() {
-    const userInput = document.getElementById('userInput').value;
-    alert('入力された内容: ' + userInput);
-}
