@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     keys.forEach(key => {
     if (key.startsWith("posts")) {
         const li = document.createElement("li");
-        const text = localStorage.getItem(key.content);
+        const text = JSON.parse(localStorage.getItem("posts"));
         li.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px; background-color: #f9f9f9;">
-            <span>${text}</span>
+            <span>${text.content}</span>
             <div>
             <button class="approve-btn" style="background-color: #4CAF50; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">承認</button>
             <button class="deny-btn" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">否認</button>
