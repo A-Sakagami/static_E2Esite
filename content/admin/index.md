@@ -1,5 +1,6 @@
 ---
 title: "Admin"
+layout: "admin" 
 draft: false
 ---
 # 管理者用ページ
