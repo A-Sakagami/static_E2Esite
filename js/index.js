@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginButton = document.getElementById("login-button");
     const loginScreen = document.getElementById("login-screen");
     const userArea = document.getElementById("user-area");
+    const postList = document.getElementById("post-list");
 
     // ログイン種別の取得
     const userType = localStorage.getItem("userType");
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 一般ユーザー用エリアを表示
         loginScreen.style.display = "none";
         userArea.style.display = "block";
+        postList.style.display = "block";
     } else {
         // ログインボタンを表示・ログイン画面へ遷移
         if (loginButton) {
