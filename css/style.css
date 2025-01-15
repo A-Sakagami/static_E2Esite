@@ -62,16 +62,16 @@ textarea {
 }
 
 .post-list {
+  display: block; /* 確実に表示されるように設定 */
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 .user-post {
-  display: none; /* 初期状態では非表示 */
+  display: block; /* 確実に表示されるように設定 */
+  margin: 10px 0; /* 各投稿の間に余白を追加 */
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
   background-color: #f9f9f9;
 }
 
