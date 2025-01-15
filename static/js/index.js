@@ -40,7 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const postInput = document.getElementById('postInput').value;
         if (postInput) {
             let posts = JSON.parse(localStorage.getItem('posts')) || [];
-            posts.push(postInput);
+            const newPost = {
+                content: postInput,
+                approved: false,
+                denyed: false,
+            };
+            posts.push(newPost);
             localStorage.setItem('posts', JSON.stringify(posts));
             displayPosts();
             document.getElementById('postInput').value = '';
@@ -65,13 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     postItem.style.backgroundColor = 'lightgreen';
                 } else if (post.denyed) {
                     postItem.style.backgroundColor = 'lightcoral';
+                } else if (post.denied) {
                 } else {
                     postItem.style.backgroundColor = 'lightblue';
                 }
                 postList.appendChild(postItem);
             });
-
-            
             displayUserElements(); // 要素を表示
         }
     }
