@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const postItem = document.createElement('div');
                 postItem.id = 'post-' + posts.indexOf(post);
                 postItem.className = 'user-post';
-                postItem.textContent = post;
+                postItem.textContent = post.content;
                 postList.appendChild(postItem);
 
                 if (post.approved) {
