@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     keys.forEach(key => {
     if (key.startsWith("posts")) {
         const li = document.createElement("li");
-        const text = localStorage.getItem(key);
+        const text = localStorage.getItem(key.content);
         li.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px; background-color: #f9f9f9;">
             <span>${text}</span>
