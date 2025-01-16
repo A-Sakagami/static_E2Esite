@@ -89,7 +89,7 @@ function handleApproval(post, index) {
     // 更新後のデータをローカルストレージに保存
     savePostsToStorage(posts);
 
-    alert(`投稿 ${index + 1}: "${post.content}" が承認されました。`);
+    alert(`投稿 ${index + 1}: ${post.content} が承認されました。`);
 
     // 表示を更新
     processAllStoredPosts();
@@ -108,7 +108,7 @@ function handleDenial(post, index) {
     // 更新後のデータをローカルストレージに保存
     savePostsToStorage(posts);
 
-    alert(`投稿 ${index + 1}: "${post.content}" が否認されました。`);
+    alert(`投稿 ${index + 1}: ${post.content} が否認されました。`);
 
     // 表示を更新
     processAllStoredPosts();
