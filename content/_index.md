@@ -2,7 +2,7 @@
 title: "Workflow Tool"
 draft: false
 ---
-## サイトのメインコンテンツ
+## ワークフローツール
 
 ようこそ！このサイトはHugoを使って作成されています。
 
