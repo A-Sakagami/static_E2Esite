@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("管理者権限が必要です。ログインしてください。");
         window.location.href = baseURL + "login/";
     }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    // 投稿を表示
     processAllStoredPosts();
 });
 
@@ -18,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function processAllStoredPosts() {
     const storedStringsList = document.getElementById("storedStringsList");
+
+    // 既存のリスト要素をクリア
+    storedStringsList.innerHTML = "";
 
     // ローカルストレージから投稿データを取得
     const posts = getPostsFromStorage();
@@ -58,7 +60,7 @@ function getPostsFromStorage() {
 function createListItem(post, index) {
     const li = document.createElement("li");
 
-    li.innerHTML = `
+    li.innerHTML = 
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;">
             <span>投稿 ${index + 1}: ${post.content}</span>
             <div>
@@ -66,7 +68,7 @@ function createListItem(post, index) {
                 <button class="deny-btn" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">否認</button>
             </div>
         </div>
-    `;
+    ;
 
     // ボタンイベントリスナーの追加
     li.querySelector(".approve-btn").addEventListener("click", () => handleApproval(post, index));
@@ -114,26 +116,6 @@ function handleDenial(post, index) {
 }
 
 /**
- * ローカルストレージから投稿データを取得
- */
-function getPostsFromStorage() {
-    try {
-        const storedData = localStorage.getItem("posts");
-        const posts = JSON.parse(storedData);
-
-        if (!Array.isArray(posts)) {
-            console.warn("投稿データが配列形式ではありません。初期化します。");
-            return [];
-        }
-
-        return posts;
-    } catch (error) {
-        console.error("ローカルストレージから投稿データの取得中にエラーが発生しました:", error);
-        return [];
-    }
-}
-
-/**
  * 投稿データをローカルストレージに保存
  */
 function savePostsToStorage(posts) {
@@ -143,4 +125,3 @@ function savePostsToStorage(posts) {
         console.error("保存するデータが配列ではありません。");
     }
 }
-
