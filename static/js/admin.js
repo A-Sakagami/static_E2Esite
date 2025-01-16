@@ -61,14 +61,13 @@ function createListItem(post, index) {
     const li = document.createElement("li");
 
     li.innerHTML = 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;">
+        `<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;">
             <span>投稿 ${index + 1}: ${post.content}</span>
             <div>
                 <button class="approve-btn" style="background-color: #88cb7f; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px;">承認</button>
                 <button class="deny-btn" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">否認</button>
             </div>
-        </div>
-    ;
+        </div>`;
 
     // ボタンイベントリスナーの追加
     li.querySelector(".approve-btn").addEventListener("click", () => handleApproval(post, index));
