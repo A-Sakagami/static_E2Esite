@@ -104,8 +104,34 @@ function displayPosts() {
         const postItem = document.createElement("div");
         postItem.id = `post-${index}`;
         postItem.className = "user-post";
-        postItem.textContent = post.content;
         postItem.style.backgroundColor = getPostBackgroundColor(post);
+
+        if (post.denyed) {
+            const postInput = document.createElement("input");
+            postInput.type = "text";
+            postInput.value = post.content;
+            postInput.style.width = "80%";
+            postItem.appendChild(postInput);
+
+            const retryButton = document.createElement("button");
+            retryButton.textContent = "再投稿";
+            retryButton.id = `retry-${index}`;
+            retryButton.style.cssText = "display: block; float: right; vertical-align: middle; padding: 2px 10px; background-color: #f8b500; color: white; border: 2px solid #fcc800; cursor: pointer;";
+            retryButton.addEventListener("click", () => {
+            if (confirm("再投稿しますか？")) {
+                post.content = postInput.value;
+                post.denyed = false;
+                localStorage.setItem("posts", JSON.stringify(posts));
+                displayPosts();
+            } else {
+                // キャンセル時の処理
+                displayPosts();
+            }
+            });
+            postItem.appendChild(retryButton);
+        } else {
+            postItem.textContent = post.content;
+        }
         postList.appendChild(postItem);
     });
 
