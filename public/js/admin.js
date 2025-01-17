@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     // ログイン状態をチェック
-    const userType = localStorage.getItem("userType");
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    console.log("userInfo:", userInfo[0]);
+    const userType = userInfo ? userInfo[0].userType : null;
 
     if (userType !== "admin") {
         // 管理者でない場合、ログインページにリダイレクト
         alert("管理者権限が必要です。ログインしてください。");
+        localStorage.removeItem("userInfo");
         window.location.href = baseURL + "login/";
     }
 

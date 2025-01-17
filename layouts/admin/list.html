@@ -3,9 +3,119 @@
     <h2>管理者専用ページ</h2>
     <p>ここに管理者用のコンテンツを表示します。</p>
     <div class="stored-strings">
-        <h3>保存された文字列</h3>
+        <h3>投稿された文字列</h3>
         <ul id="storedStringsList"></ul>
+    </div>
+
+    <h2>ユーザー管理</h2>
+    <!-- タブエリア　-->
+    <p id="tab-control">
+        <a href="#show-user">アカウント一覧</a>
+        <a href="#create-user">新規登録</a>
+        <a href="#update-user">登録情報更新</a>
+        <a href="#delete-user">アカウント削除</a>
+    </p>
+    <!-- タブの中身　-->
+    <!-- localstrage管理を想定する　-->
+    <div id="tab-content">
+        <!-- アカウント一覧 -->
+        <div class="show-user" id="show-user">
+            <ul id="user-list"></ul>
+        </div>
+        <!-- 新規登録 -->
+        <div class="create-user" id="create-user">
+            <iframe id='create-user' srcdoc='
+                <form id="createUserForm" class="form-container">
+                    <label for="username">ユーザー名: </label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">パスワード: </label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit" style="margin-top: 20px">登録 </button>
+                </form>
+                <style>
+                    .form-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        max-width: 400px;
+                        margin-right: 0px;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: #f9f9f9;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .form-container label {
+                        font-weight: bold;
+                    }
+                    .form-container input {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                    }
+                    .form-container button {
+                        padding: 10px;
+                        background-color: #4CAF50;
+                        color: white;
+                        border: none;
+                        border-radius: 3px;
+                        cursor: pointer;
+                    }
+                    .form-container button:hover {
+                        background-color: #45a049;
+                    }
+                </style>
+            ' style="border:none; width:100%; height: 300px;"></iframe>
+        </div>
+        <!-- 情報更新 -->
+        <div class="update-user" id="update-user">
+
+        </div>
+        <!-- アカウント削除 -->
+        <div class="delete-user" id="delete-user">
+
+        </div>
     </div>
 </div>
 {{ .Content }}
+<script>
+    document.getElementById('createUserForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        let valid = true;
+
+        // Clear previous error messages
+        document.querySelectorAll('.error-message').forEach(function(el) {
+            el.remove();
+        });
+
+        if (!username) {
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.style.color = 'red';
+            error.textContent = 'ユーザー名は必須項目です。';
+            document.getElementById('username').after(error);
+            valid = false;
+        }
+
+        if (!password) {
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.style.color = 'red';
+            error.textContent = 'パスワードは必須項目です。';
+            document.getElementById('password').after(error);
+            valid = false;
+        }
+
+        if (valid) {
+            // Here you would typically send the data to the server
+            console.log('ユーザー名:', username);
+            console.log('パスワード:', password);
+            
+            // Clear the form
+            document.getElementById('createUserForm').reset();
+        }
+    });
+</script>
 {{ end }}

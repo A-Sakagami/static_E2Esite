@@ -12,16 +12,16 @@ function initializeUserView() {
     const loginScreen = getElement("login-screen");
     const userArea = getElement("user-area");
     const postList = getElement("post-list");
-    const userType = localStorage.getItem("userType");
+    const userInfo = JSON.parse(localStorage.getItem("userInfo")) || [{ userType: "" }];
 
-    switch (userType) {
+    switch (userInfo[0].userType) {
         case "admin":
             navigateToAdmin();
             break;
         case "user":
             showUserArea(loginScreen, userArea, postList);
             break;
-        default:
+        case "":
             setupLoginButton(loginButton);
             break;
     }
@@ -150,10 +150,10 @@ function getPostBackgroundColor(post) {
 /**
  * ユーザー用の要素を表示
  */
-function displayUserElements() {
-    toggleElementVisibility("userForm", true);
-    toggleElementVisibility("userDiv", true);
-}
+// function displayUserElements() {
+//     toggleElementVisibility("userForm", true);
+//     toggleElementVisibility("userDiv", true);
+// }
 
 /**
  * 要素の表示・非表示を切り替え
