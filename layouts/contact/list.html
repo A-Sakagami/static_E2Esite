@@ -13,16 +13,16 @@
       <button type="button" style="width: 100%; padding: 0.7em; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;" id="sendButton">Send</button>
     
     
-    </form>
-    <script>
-      document.getElementById('sendButton').addEventListener('click', function () {
-        const userConfirmed = confirm('この内容で送信してよろしいですか？');
-        if (userConfirmed) {
-          // ここでフォーム送信の実装を追加してください。
-          document.getElementById('contactForm').submit();
-          alert('送信されました！');
-        }
-        // キャンセルの場合は何も行わず、画面にとどまる
-     });
-    </script>
+</form>
+<script>
+    document.getElementById('sendButton').addEventListener('click', function () {
+    const userConfirmed = confirm('この内容で送信してよろしいですか？');
+    if (userConfirmed) {
+        // ここでフォーム送信の実装を追加してください。
+        // document.getElementById('contactForm').submit();
+        alert('送信されました！');
+    }
+    // キャンセルの場合は何も行わず、画面にとどまる
+    });
+</script>
 {{ end }}
