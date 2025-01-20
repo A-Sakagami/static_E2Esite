@@ -9,21 +9,24 @@
 
     <h2>ユーザー管理</h2>
     <!-- タブエリア　-->
-    <p id="tab-control">
-        <a href="#show-user">アカウント一覧</a>
-        <a href="#create-user">新規登録</a>
-        <a href="#update-user">登録情報更新</a>
-        <a href="#delete-user">アカウント削除</a>
-    </p>
-    <!-- タブの中身　-->
-    <!-- localstrage管理を想定する　-->
-    <div id="tab-content">
+    <div id="tabs">
+        <!-- タブのリスト -->
+        <ul class="tab-list">
+            <li class="tab active" data-tab="show-user">ユーザー一覧</li>
+            <li class="tab" data-tab="create-user">ユーザー登録</li>
+            <li class="tab" data-tab="update-user">ユーザー情報更新</li>
+            <li class="tab" data-tab="delete-user">ユーザー削除</li>
+        </ul>
+        <!-- タブに対応する内容 -->
+        <!-- localstrage管理を想定する　-->
         <!-- アカウント一覧 -->
-        <div class="show-user" id="show-user">
+        <div class="tab-content active" id="show-user">
+            <h3>ユーザー一覧</h3>
             <ul id="user-list"></ul>
         </div>
         <!-- 新規登録 -->
-        <div class="create-user" id="create-user">
+        <div class="tab-content" id="create-user">
+            <h3>新規登録</h3>
             <iframe id='create-user' srcdoc='
                 <form id="createUserForm" class="form-container">
                     <label for="username">ユーザー名: </label>
@@ -68,54 +71,15 @@
             ' style="border:none; width:100%; height: 300px;"></iframe>
         </div>
         <!-- 情報更新 -->
-        <div class="update-user" id="update-user">
+        <div class="tab-content" id="update-user">
+            <h3>ユーザー情報更新</h3>
 
         </div>
         <!-- アカウント削除 -->
-        <div class="delete-user" id="delete-user">
-
+        <div class="tab-content" id="delete-user">
+            <h3>ユーザー削除</h3>
         </div>
     </div>
 </div>
 {{ .Content }}
-<script>
-    document.getElementById('createUserForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        let valid = true;
-
-        // Clear previous error messages
-        document.querySelectorAll('.error-message').forEach(function(el) {
-            el.remove();
-        });
-
-        if (!username) {
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.style.color = 'red';
-            error.textContent = 'ユーザー名は必須項目です。';
-            document.getElementById('username').after(error);
-            valid = false;
-        }
-
-        if (!password) {
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.style.color = 'red';
-            error.textContent = 'パスワードは必須項目です。';
-            document.getElementById('password').after(error);
-            valid = false;
-        }
-
-        if (valid) {
-            // Here you would typically send the data to the server
-            console.log('ユーザー名:', username);
-            console.log('パスワード:', password);
-            
-            // Clear the form
-            document.getElementById('createUserForm').reset();
-        }
-    });
-</script>
 {{ end }}

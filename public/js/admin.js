@@ -127,3 +127,23 @@ function savePostsToStorage(posts) {
         console.error("保存するデータが配列ではありません。");
     }
 }
+
+// 全てのタブを取得
+const tabs = document.querySelectorAll('.tab');
+// 全てのタブ内容を取得
+const contents = document.querySelectorAll('.tab-content');
+
+// 各タブにクリックイベントを追加
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // すべてのタブと内容を非アクティブにする
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.classList.remove('active'));
+
+    // クリックしたタブをアクティブにする
+    tab.classList.add('active');
+    // 対応する内容をアクティブにする
+    const target = tab.getAttribute('data-tab');
+    document.getElementById(target).classList.add('active');
+  });
+});

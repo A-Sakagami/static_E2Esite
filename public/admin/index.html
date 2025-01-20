@@ -18,6 +18,7 @@
     
     
     <script defer src="http://localhost:1313/static_E2Esite/js/admin.js"></script>
+    <script defer src="http://localhost:1313/static_E2Esite/js/create-user.js"></script>
     
 </head>
 <body>
@@ -52,21 +53,24 @@
 
     <h2>ユーザー管理</h2>
     
-    <p id="tab-control">
-        <a href="#show-user">アカウント一覧</a>
-        <a href="#create-user">新規登録</a>
-        <a href="#update-user">登録情報更新</a>
-        <a href="#delete-user">アカウント削除</a>
-    </p>
-    
-    
-    <div id="tab-content">
+    <div id="tabs">
         
-        <div class="show-user" id="show-user">
+        <ul class="tab-list">
+            <li class="tab active" data-tab="show-user">ユーザー一覧</li>
+            <li class="tab" data-tab="create-user">ユーザー登録</li>
+            <li class="tab" data-tab="update-user">ユーザー情報更新</li>
+            <li class="tab" data-tab="delete-user">ユーザー削除</li>
+        </ul>
+        
+        
+        
+        <div class="tab-content active" id="show-user">
+            <h3>ユーザー一覧</h3>
             <ul id="user-list"></ul>
         </div>
         
-        <div class="create-user" id="create-user">
+        <div class="tab-content" id="create-user">
+            <h3>新規登録</h3>
             <iframe id='create-user' srcdoc='
                 <form id="createUserForm" class="form-container">
                     <label for="username">ユーザー名: </label>
@@ -111,12 +115,13 @@
             ' style="border:none; width:100%; height: 300px;"></iframe>
         </div>
         
-        <div class="update-user" id="update-user">
+        <div class="tab-content" id="update-user">
+            <h3>ユーザー情報更新</h3>
 
         </div>
         
-        <div class="delete-user" id="delete-user">
-
+        <div class="tab-content" id="delete-user">
+            <h3>ユーザー削除</h3>
         </div>
     </div>
 </div>
@@ -140,46 +145,6 @@ etc&hellip;</li>
 </ul>
 <p>このページの内容は随時更新される予定です。</p>
 
-<script>
-    document.getElementById('createUserForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        let valid = true;
-
-        
-        document.querySelectorAll('.error-message').forEach(function(el) {
-            el.remove();
-        });
-
-        if (!username) {
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.style.color = 'red';
-            error.textContent = 'ユーザー名は必須項目です。';
-            document.getElementById('username').after(error);
-            valid = false;
-        }
-
-        if (!password) {
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.style.color = 'red';
-            error.textContent = 'パスワードは必須項目です。';
-            document.getElementById('password').after(error);
-            valid = false;
-        }
-
-        if (valid) {
-            
-            console.log('ユーザー名:', username);
-            console.log('パスワード:', password);
-            
-            
-            document.getElementById('createUserForm').reset();
-        }
-    });
-</script>
 
     </main>
     <footer>

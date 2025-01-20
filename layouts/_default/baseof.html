@@ -20,6 +20,7 @@
     {{ if strings.Contains .File.Path "admin" }}
     <!-- 管理者ページ専用のスクリプトを読み込む -->
     <script defer src="{{ .Site.BaseURL }}js/admin.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/create-user.js"></script>
     {{ end }}
 </head>
 <body>
