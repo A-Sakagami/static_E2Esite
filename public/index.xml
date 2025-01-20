@@ -15,12 +15,5 @@
       <guid>http://localhost:1313/static_E2Esite/about/</guid>
       <description>&lt;h1 id=&#34;このサイトについて&#34;&gt;このサイトについて&lt;/h1&gt;&#xA;&lt;p&gt;このサイトは、エンドツーエンドのテストをサポートするために作成されました。ここでは、テストの実行方法やベストプラクティスについての情報を提供しています。&lt;/p&gt;&#xA;&lt;h2 id=&#34;このサイトの用途&#34;&gt;このサイトの用途&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;テストの自動化&lt;/li&gt;&#xA;&lt;li&gt;テスト結果のレポート&lt;/li&gt;&#xA;&lt;li&gt;テストケースの管理&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;お問い合わせ&#34;&gt;お問い合わせ&lt;/h2&gt;&#xA;&lt;p&gt;ご質問やフィードバックがありましたら、お気軽にお問い合わせください。&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/static_E2Esite/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/static_E2Esite/contact/</guid>
-      <description>&lt;h1 id=&#34;お問い合わせページ&#34;&gt;お問い合わせページ&lt;/h1&gt;&#xA;&lt;p&gt;こちらのページからお問い合わせいただけます。以下のフォームに必要事項をご記入の上、送信してください。&lt;/p&gt;&#xA;&lt;h2 id=&#34;お問い合わせフォーム&#34;&gt;お問い合わせフォーム&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;お名前&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;メールアドレス&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;お問い合わせ内容&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;送信ボタンを押すと、担当者が確認次第ご連絡いたします。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: 個人情報は厳重に管理し、第三者に提供することはありません。&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
