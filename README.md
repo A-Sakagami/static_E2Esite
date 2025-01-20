@@ -35,8 +35,8 @@ git clone https://github.com/A-Sakagami/static_E2Esite.git
 
 ### トップ画面
 
-- URL: https://a-sakagami.github.io/static_E2Esite/
-- ヘッダー：Home, About, Contact, Login
+- [x] URL: https://a-sakagami.github.io/static_E2Esite/
+- [x] ヘッダー：Home, About, Contact, Login
 
 ### ログイン画面
 - トップ画面のログインボタン、またはヘッダーに*Login*があれば遷移可能
@@ -48,8 +48,8 @@ git clone https://github.com/A-Sakagami/static_E2Esite.git
 
 <details><summary>以下を確認ください</summary>
 
-- userType: admin, username: admin, password: adminpass1234
-- userType: user, username: user, password: userpass1234
+- [x] userType: admin, username: admin, password: adminpass1234
+- [x] userType: user, username: user, password: userpass1234
 
 </details>
 
@@ -61,7 +61,7 @@ URL: https://a-sakagami.github.io/static_E2Esite/
 #### 文章の投稿
 
 - [x] テキストエリアに任意の文字列を代入可能
-- 文字数上限は255文字(全角・半角を問わない)
+- [ ] 文字数上限は255文字(全角・半角を問わない)
 
 #### 文章のステータス
 
@@ -76,7 +76,7 @@ URL: https://a-sakagami.github.io/static_E2Esite/
 
 - [x] 管理者ユーザーでログイン後、管理者用のホーム画面にリダイレクトされる。
 - [x] URL: https://a-sakagami.github.io/static_E2Esite/admin
-- 未ログイン時、または一般ユーザーでログイン時に上のURLを直接入力すると、ポップアップが表示されて前の画面にリダイレクトされる。
+- [ ] 未ログイン時、または一般ユーザーでログイン時に上のURLを直接入力すると、ポップアップが表示されて前の画面にリダイレクトされる。
 
 #### 文章の承認・否認
 
@@ -91,14 +91,14 @@ URL: https://a-sakagami.github.io/static_E2Esite/
 #### ユーザー管理
 
 - [x] タブごとにCRUD操作を実装している
-    - 新規ユーザー登録
-    - ユーザー一覧表示
-    - ユーザー情報更新
-        - ユーザー権限の変更も実装予定
-    - ユーザー情報削除
+    - [ ] 新規ユーザー登録
+    - [ ] ユーザー一覧表示
+    - [ ] ユーザー情報更新
+        - [ ] ユーザー権限の変更も可
+    - [ ] ユーザー情報削除
 
 ### お問い合わせ画面(Contact)
 
 - [x] お問い合わせフォームの送信ができる
      - [x] 名前・メールアドレス・本文の入力欄
-     - [x] 送信するとFormspreeの送信完了画面に遷移する
+     - [x] 送信するとポップアップが表示される
