@@ -4,22 +4,22 @@
 ## ディレクトリ構造
 
 <details><summary>以下を確認ください</summary>
-- .github
-- archetypes
-- ~~assets~~
-- content
-- ~~data~~
-- ~~i18n~~
-- layouts
-- public
-- static
-- ~~themes~~
-- .gitignore
-- .hugo_build.lock
-- .nojekyll
-- config.toml
-- LICENSE
-- README.md
+<p>.github</p>
+<p>archetypes</p>
+<p><strike>assets</strike></p>
+<p>content</p>
+<p><strike>data</strike></p>
+<p><strike>i18n</strike></p>
+<p><strike>layouts</strike></p>
+<p>public</p>
+<p>static</p>
+<p><strike>themes</strike></p>
+<p>.gitignore</p>
+<p>.hugo_build.lock</p>
+<p>.nojekyll</p>
+<p>config.toml</p>
+<p>LICENSE</p>
+<p>README.md</p>
 </details>
 
 ## ダウンロード
