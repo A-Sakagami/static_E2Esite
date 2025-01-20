@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .user-info {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="user-info-list"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userInfoList = document.getElementById('user-info-list');
+            const userInfo = JSON.parse(localStorage.getItem('userInfo')) || [];
+
+            if (userInfo.length === 0) {
+                userInfoList.innerHTML = '<p>No user info found in localStorage.</p>';
+            } else {
+                userInfo.forEach(info => {
+                    const userInfoDiv = document.createElement('div');
+                    userInfoDiv.className = 'user-info';
+                    userInfoDiv.textContent = JSON.stringify(info, null, 2);
+                    userInfoList.appendChild(userInfoDiv);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
