@@ -7,6 +7,13 @@
 </head>
 <body>
     <form id="updateUserForm" class="form-container">
+        <label for="role">ユーザー種別: </label>
+        <div>
+            <input type="radio" id="admin" name="role" value="admin" required>
+            <label for="admin">管理者</label>
+            <input type="radio" id="user" name="role" value="user" required>
+            <label for="user">一般ユーザー</label>
+        </div>
         <label for="username">ユーザー名: </label>
         <input type="text" id="username" name="username" required>
         <label for="password">パスワード: </label>

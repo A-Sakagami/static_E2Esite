@@ -29,7 +29,11 @@
                 userInfo.forEach(info => {
                     const userInfoDiv = document.createElement('div');
                     userInfoDiv.className = 'user-info';
-                    userInfoDiv.textContent = JSON.stringify(info, null, 2);
+
+                    const user = document.createElement('p');
+                    user.textContent = `Type: ${info.userType} | Name: ${info.username} | Pass: ${info.password}`;
+                    user.style.fontWeight = 'bold';
+                    userInfoDiv.appendChild(user);
                     userInfoList.appendChild(userInfoDiv);
                 });
             }

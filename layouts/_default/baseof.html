@@ -17,6 +17,7 @@
         const baseURL = "{{ .Site.BaseURL }}";
     </script>
     <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/UserStorage.js"></script>
     {{ if strings.Contains .File.Path "admin" }}
     <!-- 管理者ページ専用のスクリプトを読み込む -->
     <script defer src="{{ .Site.BaseURL }}js/admin.js"></script>
