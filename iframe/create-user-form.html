@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin-right: 0px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container label {
+        font-weight: bold;
+    }
+    .form-container input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .form-container button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    <form id="createUserForm" class="form-container">
+        <label for="role">ユーザー種別: </label>
+        <div>
+            <input type="radio" id="admin" name="role" value="admin" required>
+            <label for="admin">管理者</label>
+            <input type="radio" id="user" name="role" value="user" required>
+            <label for="user">一般ユーザー</label>
+        </div>
+        <label for="username">ユーザー名: </label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">パスワード: </label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" style="margin-top: 20px">登録 </button>
+    </form>
+</body>
+</html>
