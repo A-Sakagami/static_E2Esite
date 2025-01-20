@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // ログアウトのイベントリスナーを追加
             authMenu.addEventListener("click", () => {
                 localStorage.removeItem("userInfo"); // ログイン情報を削除
+                // UserStorage.clear(); // ユーザーストレージをクリア
+                // sessionStorage.clear(); // セッション情報をクリア
                 alert("ログアウトしました。");
                 window.location.href = baseURL; // トップページへリダイレクト
             });
