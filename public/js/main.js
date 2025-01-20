@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.getElementById("loginForm");
     const adminURL = baseURL + "admin/";
     const loginURL = baseURL + "login/";
 
+    // ログインフォームの送信イベントをキャッチ
     document.getElementById("loginForm").addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -34,31 +34,46 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("ログインに失敗しました。");
             window.location.href = loginURL;
         }
-    });
+
+        // エラーメッセージを表示
+        if (username === '' || password === '') {
+            alert('ユーザー名またはパスワードが入力されていません');
+            event.preventDefault();
+        }
+    }); 
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    // ログイン・ログアウトの出し分け処理
     const authMenu = document.getElementById("auth-menu");
-    // console.log(baseURL);
 
-    // ログイン状態を確認
-    let userInfo = localStorage.getItem("userInfo");
+    // ログイン状態の確認とUI更新
+    function updateAuthMenu() {
+        const userInfo = JSON.parse(localStorage.getItem("userInfo")); // ユーザー情報を取得
+        console.log("userInfo:", userInfo);
 
-    if (userInfo) {
-        // ログイン中の場合
-        authMenu.textContent = "Logout";
-        authMenu.href = "#";
-        authMenu.addEventListener("click", () => {
-            // ログアウト処理
-            localStorage.removeItem("userInfo");
-            alert("ログアウトしました。");
-            window.location.href = baseURL;
-        });
-    } else {
-        // ログアウト中の場合
-        authMenu.textContent = "Login";
-        authMenu.href = baseURL + "login/";
+        if (userInfo.length > 0) {
+            // ログイン中の場合
+            console.log(authMenu);
+            authMenu.textContent = "Logout";
+            authMenu.href = "#";
+            console.log(authMenu);
+
+            // ログアウトのイベントリスナーを追加
+            authMenu.addEventListener("click", () => {
+                localStorage.removeItem("userInfo"); // ログイン情報を削除
+                alert("ログアウトしました。");
+                window.location.href = baseURL; // トップページへリダイレクト
+            });
+        } else {
+            // ログアウト中の場合
+            authMenu.textContent = "Login";
+            authMenu.href = baseURL + "login/";
+        }
     }
+
+    // 初期化処理
+    updateAuthMenu();
 
     // ハンバーガーメニューのスクリプト
     const hamburger = document.querySelector('.hamburger-menu');
@@ -71,5 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("ハンバーガーメニューの要素が見つかりません");
     }
-
 });
+
+
+
+
