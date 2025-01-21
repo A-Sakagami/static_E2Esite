@@ -44,10 +44,13 @@
     <h2>ログイン</h2>
     <form id="loginForm">
         <label for="username">ユーザー名:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" placeholder="ユーザー名を入力してください..." required>
+        <span class="error" id="username-error"></span>
         <label for="password">パスワード:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="パスワードを入力してください..." pattern='[0-9a-zA-Z]{8,20}' minlength="8" maxlength="20" required>
+        <span class="error" id="password-error"></span>
         <button type="submit">ログイン</button>
+        <span class="error" id="login-error"></span>
     </form>
 </div>
 

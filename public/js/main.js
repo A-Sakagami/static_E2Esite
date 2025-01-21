@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const userInfo = JSON.parse(localStorage.getItem("userInfo")); // ユーザー情報を取得
         console.log("userInfo:", userInfo);
 
-        if (userInfo.length > 0) {
+        if (userInfo) {
             // ログイン中の場合
             console.log(authMenu);
             authMenu.textContent = "Logout";
@@ -79,9 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ハンバーガーメニューのスクリプト
     const hamburger = document.querySelector('.hamburger-menu');
-    const navUl = document.querySelector('header nav ul');
-
-    if (hamburger && navUl) {
+    const navUl = document.querySelector('nav ul');
+    if (hamburger) {
         hamburger.addEventListener('click', () => {
             navUl.classList.toggle('show');
         });

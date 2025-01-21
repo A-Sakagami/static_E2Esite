@@ -80,8 +80,19 @@ header nav a:hover {
         display: flex;
     }
 
+    /* ハンバーガーメニューのスタイル */
     .hamburger-menu {
-        display: flex;
+        display: block;
+        flex-direction: column;
+        cursor: pointer;
+        margin-right: 20px; /* ハンバーガーメニュー右に余白 */
+    }
+
+    .hamburger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        margin: 4px 0;
     }
 
     header nav ul li {

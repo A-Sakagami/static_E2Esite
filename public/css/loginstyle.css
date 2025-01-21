@@ -56,6 +56,11 @@
     background-color: #0056b3; /* ホバー時の背景色を変更 */
 }
 
+.error{
+    color: #ff0e0e; /* リンクの色を変更 */
+    cursor: pointer;
+}
+
 #loginForm {
     display: block; /* 確実にフォームが表示されるように指定 */
 }
