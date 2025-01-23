@@ -135,7 +135,7 @@ function displayPosts() {
         postList.appendChild(postItem);
     });
 
-    displayUserElements();
+    //displayUserElements();
 }
 
 /**
