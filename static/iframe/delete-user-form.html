@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete User List</title>
+    <title>Delete User</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
             const userInfo = JSON.parse(localStorage.getItem('userInfo')) || [];
 
             if (userInfo.length === 0) {
-                userInfoList.innerHTML = '<p>No user info found in localStorage.</p>';
+                userInfoList.innerHTML = '<p>登録ユーザーが存在しません。</p>';
             } else {
                 userInfo.forEach(info => {
                     const userInfoDiv = document.createElement('div');
