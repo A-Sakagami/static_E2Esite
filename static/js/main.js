@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const adminURL = baseURL + "admin/";
     const loginURL = baseURL + "login/";
 
+    // ログイン・ログアウトの出し分け処理
+    const authMenu = document.getElementById("auth-menu");
+
+    // 初期化処理
+    updateAuthMenu(authMenu);
+
+
     // ログインフォームの送信イベントをキャッチ
     document.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -40,40 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('ユーザー名またはパスワードが入力されていません');
             event.preventDefault();
         }
-    }); 
-
-    // ログイン・ログアウトの出し分け処理
-    const authMenu = document.getElementById("auth-menu");
-
-    // ログイン状態の確認とUI更新
-    function updateAuthMenu() {
-        const userInfo = JSON.parse(localStorage.getItem("userInfo")); // ユーザー情報を取得
-        console.log("userInfo:", userInfo);
-
-        if (userInfo) {
-            // ログイン中の場合
-            console.log(authMenu);
-            authMenu.textContent = "Logout";
-            authMenu.href = "#";
-            console.log(authMenu);
-
-            // ログアウトのイベントリスナーを追加
-            authMenu.addEventListener("click", () => {
-                localStorage.removeItem("userInfo"); // ログイン情報を削除
-                // UserStorage.clear(); // ユーザーストレージをクリア
-                // sessionStorage.clear(); // セッション情報をクリア
-                alert("ログアウトしました。");
-                window.location.href = baseURL; // トップページへリダイレクト
-            });
-        } else {
-            // ログアウト中の場合
-            authMenu.textContent = "Login";
-            authMenu.href = baseURL + "login/";
-        }
-    }
-
-    // 初期化処理
-    updateAuthMenu();
+    }); // end of submit event listener
 
     // ハンバーガーメニューのスクリプト
     const hamburger = document.querySelector('.hamburger-menu');
@@ -86,6 +60,34 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("ハンバーガーメニューの要素が見つかりません");
     }
 });
+
+// ログイン状態の確認とUI更新
+function updateAuthMenu(authMenu) {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo")); // ユーザー情報を取得
+    console.log("userInfo:", userInfo);
+
+    if (userInfo) {
+        // ログイン中の場合
+        console.log(authMenu);
+        authMenu.textContent = "Logout";
+        authMenu.href = "#";
+        console.log(authMenu);
+
+        // ログアウトのイベントリスナーを追加
+        authMenu.addEventListener("click", () => {
+            localStorage.removeItem("userInfo"); // ログイン情報を削除
+            // UserStorage.clear(); // ユーザーストレージをクリア
+            // sessionStorage.clear(); // セッション情報をクリア
+            alert("ログアウトしました。");
+            window.location.href = baseURL; // トップページへリダイレクト
+        });
+    } else {
+        // ログアウト中の場合
+        authMenu.textContent = "Login";
+        authMenu.href = baseURL + "login/";
+    }
+}
+
 
 
 
