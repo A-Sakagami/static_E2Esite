@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginURL = baseURL + "login/";
 
     // ログインフォームの送信イベントをキャッチ
-    document.getElementById("loginForm").addEventListener("submit", (event) => {
+    document.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const username = document.getElementById("username").value;
