@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // ログイン状態をチェック
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     console.log("userInfo:", userInfo[0]);
-    const userType = userInfo ? userInfo[0].userType : null;
+    const userType = currentUser ? currentUser[0].userType : null;
 
     if (userType !== "admin") {
         // 管理者でない場合、ログインページにリダイレクト
