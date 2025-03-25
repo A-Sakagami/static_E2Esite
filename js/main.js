@@ -15,33 +15,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        let userInfo = JSON.parse(localStorage.getItem("userInfo") || "[]");
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
         // 簡易的な認証処理（更新予定：任意のアカウントを追加・管理者と一般の選択式）
-        if (username === "admin" && password === "adminpass1234") {
-            userInfo.push({
-                userType:"admin",
-                username: username,
-                password: password
-            });
-            localStorage.setItem("userInfo", JSON.stringify(userInfo));
-            alert("管理者でログインしました。");
-            window.location.href = adminURL;
-        } else if(username === "user" && password === "userpass1234") {
-            userInfo.push({
-                userType:"user",
-                username: username,
-                password: password
-            });
-            localStorage.setItem("userInfo", JSON.stringify(userInfo));
-            alert("ログインしました。");
-            window.location.href = baseURL;
+        if (userInfo && Array.isArray(userInfo)) {
+            for (let i = 0; i < userInfo.length; i++) {
+                if (userInfo[i].username === username && userInfo[i].password === password && userInfo[i].userType === "admin") {
+                    localStorage.setItem("currentUser", JSON.stringify({
+                        userType: userInfo[i].userType,
+                        username: username,
+                        password: password,
+                        loggedIn: true
+                    }));
+                    alert(`${userInfo[i].userType === "admin"} 管理者でログインしました。`);
+                    window.location.href = userInfo[i].userType === "admin" ? adminURL : baseURL;
+                    return;
+                } else if (userInfo[i].username === username && userInfo[i].password == password && userInfo[i].userType === "user") {
+                    localStorage.setItem("currentUser", JSON.stringify({
+                        userType: userInfo[i].userType,
+                        username: username,
+                        password: password,
+                        loggedIn: true
+                    }));
+                    alert(`${userInfo[i].userType === "user"} 一般ユーザーでログインしました。`);
+                    return;
+                } 
+            }
+            alert("ユーザー名またはパスワードが違います。");
+                return;
         }
-        else {
-            alert("ログインに失敗しました。");
-            window.location.href = loginURL;
-        }
-
         // エラーメッセージを表示
         if (username === '' || password === '') {
             alert('ユーザー名またはパスワードが入力されていません');
@@ -63,32 +65,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ログイン状態の確認とUI更新
 function updateAuthMenu(authMenu) {
-    const userInfo = JSON.parse(localStorage.getItem("userInfo")); // ユーザー情報を取得
-    console.log("userInfo:", userInfo);
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    console.log("currentUser:", currentUser);
+    console.log("Auth menu:", authMenu);
 
-    if (userInfo) {
-        // ログイン中の場合
-        console.log(authMenu);
+    if (currentUser && currentUser.loggedIn) {
+        // ログイン中の表示
         authMenu.textContent = "Logout";
         authMenu.href = "#";
-        console.log(authMenu);
 
-        // ログアウトのイベントリスナーを追加
         authMenu.addEventListener("click", () => {
-            localStorage.removeItem("userInfo"); // ログイン情報を削除
-            // UserStorage.clear(); // ユーザーストレージをクリア
-            // sessionStorage.clear(); // セッション情報をクリア
+            localStorage.removeItem("currentUser");
             alert("ログアウトしました。");
-            window.location.href = baseURL; // トップページへリダイレクト
+            window.location.href = baseURL;
         });
     } else {
-        // ログアウト中の場合
+        // 未ログイン時の表示
         authMenu.textContent = "Login";
         authMenu.href = baseURL + "login/";
     }
 }
-
-
-
-
-
