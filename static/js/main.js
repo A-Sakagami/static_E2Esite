@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         password: password,
                         loggedIn: true
                     }));
-                    alert(`${userInfo[i].userType === "admin"} 管理者でログインしました。`);
+                    alert(`${userInfo[i].userType === "admin" ? "管理者" : false} でログインしました。`);
                     window.location.href = userInfo[i].userType === "admin" ? adminURL : baseURL;
                     return;
                 } else if (userInfo[i].username === username && userInfo[i].password == password && userInfo[i].userType === "user") {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         password: password,
                         loggedIn: true
                     }));
-                    alert(`${userInfo[i].userType === "user"} 一般ユーザーでログインしました。`);
+                    alert(`${userInfo[i].userType === "user" ? "一般ユーザー" : false} でログインしました。`);
                     return;
                 } 
             }
