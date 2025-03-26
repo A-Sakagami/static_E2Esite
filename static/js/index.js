@@ -14,7 +14,7 @@ function initializeUserView() {
     const postList = getElement("post-list");
     const currentUser = JSON.parse(localStorage.getItem("currentUser")) || [{ userType: "" }];
 
-    switch (currentUser[0].userType) {
+    switch (currentUser.userType) {
         case "admin":
             navigateToAdmin();
             break;

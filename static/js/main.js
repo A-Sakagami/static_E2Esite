@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 初期化処理
     updateAuthMenu(authMenu);
 
-
     // ログインフォームの送信イベントをキャッチ
     document.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("password").value;
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-        // 簡易的な認証処理（更新予定：任意のアカウントを追加・管理者と一般の選択式）
+        // 認証処理（更新予定：任意のアカウントを追加・管理者と一般の選択式）
         if (userInfo && Array.isArray(userInfo)) {
             for (let i = 0; i < userInfo.length; i++) {
                 if (userInfo[i].username === username && userInfo[i].password === password && userInfo[i].userType === "admin") {
@@ -38,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         loggedIn: true
                     }));
                     alert(`${userInfo[i].userType === "user" ? "一般ユーザー" : false} でログインしました。`);
+                    window.location.href = baseURL;
                     return;
                 } 
             }
