@@ -53,5 +53,10 @@
         </div>
     </div>
 </div>
-{{ .Content }}
 {{ end }}
+{{ define "scripts" }}
+    <script defer src="{{ .Site.BaseURL }}js/user-create.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/user-update.js"></script>
+    <script defer src="{{ .Site.BaseURL }}js/user-delete.js"></script>
+{{ end }}
+{{ .Content }}

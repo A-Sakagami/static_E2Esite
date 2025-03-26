@@ -28,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     iframe.addEventListener('load', () => {
+        console.log('iframe load イベント発火');
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
         const form = iframeDoc.getElementById('createUserForm');
 
@@ -42,17 +43,17 @@ window.addEventListener('DOMContentLoaded', () => {
             clearErrors(iframeDoc);
 
             const role = iframeDoc.querySelector('input[name="role"]:checked')?.value;
+            console.log('Role:', role);
             const username = iframeDoc.getElementById('username')?.value.trim();
             const password = iframeDoc.getElementById('password')?.value;
 
             let isValid = true;
 
-            if (!username) {
+            if (!username || username == "") {
                 showError(iframeDoc, 'username', 'ユーザー名は必須項目です。');
                 isValid = false;
             }
-
-            if (!password) {
+            if (!password || password == "") {
                 showError(iframeDoc, 'password', 'パスワードは必須項目です。');
                 isValid = false;
             } else if (password.length < 8 || password.length > 20) {
@@ -61,8 +62,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
-                console.log('User created:', { role, username, password, isLoggedIn: false });
-                saveUser({role, username, password, isLoggedIn: false });
+                console.log('User created:', { role, username, password });
+                alert('ユーザーが作成されました。');
+                saveUser({role, username, password });
                 form.reset();
             }
         });
@@ -84,9 +86,18 @@ function showError(doc, inputId, message) {
     }
 }
 
-function saveUser(user) {
-    const userInfo = JSON.parse(localStorage.getItem('userInfo')) || [];
-    userInfo.push(user);
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-    console.log('User saved:', user);
+function saveUser(newuser) {
+    const users = getUserInfoList();
+    console.log('Existing users:', users);
+
+    // 既に同じusernameがあれば追加しない or エラー
+    const exists = users.some(u => u.username === newuser.username);
+    if (exists) {
+        console.warn('ユーザー名が既に存在しています');
+        return false;
+    }
+    users.push(newuser);
+    saveUserInfoList(users);
+    console.log('User saved:', newuser);
 }
+

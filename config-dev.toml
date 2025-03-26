@@ -1,0 +1,40 @@
+# ローカル確認用
+baseURL = "http://localhost:1313/static_E2Esite/"
+languageCode = 'ja-jp'
+title = '業務連絡フロー'
+publishDir = 'public'
+
+# メタ情報
+[params]
+  description = "Hugoで作成したシンプルなウェブサイト"
+  author = "A-Sakagami"
+  github = "https://github.com/A-Sakagami/"
+  showHeader = true
+  loggedIn = true
+
+[permalinks]
+  about = "/about/"
+  contact = "/contact/"
+  login = "/login/"
+
+# メニューの設定
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Login"
+    url = "/login/"
+    weight = 4

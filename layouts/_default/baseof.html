@@ -4,28 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }}</title>
-    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/header.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/footer.css" rel="stylesheet">
+    <!-- Goの html/template は自動でエスケープ処理をするため、-->
+    <!-- 文字列を属性に使うときは、不要なクオートでエラーを起こしやすいです。-->
+    <link rel="stylesheet" href="{{"css/style.css"| relURL }}" >
+    <link rel="stylesheet" href="{{"css/header.css" | relURL }}">
+    <link rel="stylesheet" href="{{"css/footer.css" | relURL }}">
     {{ if strings.Contains .File.Path "login" }}
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/loginstyle.css"> <!-- loginページ専用CSS -->
+    <link rel="stylesheet" href="{{ "css/loginstyle.css" | relURL }}">
     {{ else if strings.Contains .File.Path "admin" }}
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/adminstyle.css"> <!-- adminページ専用CSS -->
+    <link rel="stylesheet" href="{{ "css/adminstyle.css" | relURL }}">
     {{ end }}
-    <!-- 共通のベースURL定義 -->
-    <script>
-        const baseURL = "{{ .Site.BaseURL }}";
-    </script>
-    <script defer src="{{ .Site.BaseURL }}js/main.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/setDefaultAccount.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/UserStorage.js"></script>
-    {{ if strings.Contains .File.Path "admin" }}
-    <!-- 管理者ページ専用のスクリプトを読み込む -->
-    <script defer src="{{ .Site.BaseURL }}js/admin.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/user-create.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/user-update.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/user-delete.js"></script>
-    {{ end }}
+    
 </head>
 <body>
     {{ partial "header.html" . }}
@@ -33,5 +22,18 @@
         {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
+    {{ block "scripts" . }}
+        <!-- 共通のベースURL定義 -->
+        <script>
+            const baseURL = "{{ "/" | relURL }}"; // これも relURL 安全
+        </script>
+        <script defer src="{{ "js/main.js" | relURL }}"></script>
+        <script defer src="{{ "js/setDefaultAccount.js" | relURL }}"></script>
+        <script defer src="{{ "js/UserStorage.js" | relURL }}"></script>
+
+        {{ if strings.Contains .File.Path "admin" }}
+        <script defer src="{{ "js/admin.js" | relURL }}"></script>
+        {{ end }}
+    {{ end }}
 </body>
 </html>
