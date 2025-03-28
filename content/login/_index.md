@@ -1,5 +1,6 @@
 ---
 title: "Login"
+layout: "login"
 type: "login"
 draft: false
 ---

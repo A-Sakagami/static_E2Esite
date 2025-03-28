@@ -6,15 +6,14 @@
     <title>{{ .Title }}</title>
     <!-- Goの html/template は自動でエスケープ処理をするため、-->
     <!-- 文字列を属性に使うときは、不要なクオートでエラーを起こしやすいです。-->
-    <link rel="stylesheet" href="{{"css/style.css"| relURL }}" >
-    <link rel="stylesheet" href="{{"css/header.css" | relURL }}">
-    <link rel="stylesheet" href="{{"css/footer.css" | relURL }}">
-    {{ if strings.Contains .File.Path "login" }}
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" >
+    <link rel="stylesheet" href="{{ "css/header.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/footer.css" | relURL }}">
+    {{ if eq .Layout "login" }}
     <link rel="stylesheet" href="{{ "css/loginstyle.css" | relURL }}">
-    {{ else if strings.Contains .File.Path "admin" }}
+    {{ else if eq .Layout "admin" }}
     <link rel="stylesheet" href="{{ "css/adminstyle.css" | relURL }}">
     {{ end }}
-    
 </head>
 <body>
     {{ partial "header.html" . }}
@@ -25,15 +24,11 @@
     {{ block "scripts" . }}
         <!-- 共通のベースURL定義 -->
         <script>
-            const baseURL = "{{ "/" | relURL }}"; // これも relURL 安全
+            const baseURL = "{{ .Site.BaseURL }}"; 
         </script>
         <script defer src="{{ "js/main.js" | relURL }}"></script>
         <script defer src="{{ "js/setDefaultAccount.js" | relURL }}"></script>
         <script defer src="{{ "js/UserStorage.js" | relURL }}"></script>
-
-        {{ if strings.Contains .File.Path "admin" }}
-        <script defer src="{{ "js/admin.js" | relURL }}"></script>
-        {{ end }}
     {{ end }}
 </body>
 </html>

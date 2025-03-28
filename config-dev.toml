@@ -1,5 +1,6 @@
 # ローカル確認用
 baseURL = "http://localhost:1313/static_E2Esite/"
+canonifyURLs = true
 languageCode = 'ja-jp'
 title = '業務連絡フロー'
 publishDir = 'public'

@@ -24,7 +24,7 @@
             <h3>ユーザー一覧</h3>
             <iframe id='user-show'
                 style="border: none; width: 100%; height: 350px;"
-                src="{{ .Site.BaseURL }}iframe/show-user-form.html">
+                src="{{"iframe/show-user-form.html" | relURL }}">
             </iframe>
         </div>
         <!-- 新規登録 -->
@@ -32,7 +32,7 @@
             <h3>新規登録</h3>
             <iframe id='user-create'
                 style="border: none; width: 100%; height: 350px;"
-                src="{{ .Site.BaseURL }}iframe/create-user-form.html">
+                src="{{"iframe/create-user-form.html" | relURL }}">
             </iframe>
         </div>
         <!-- 情報更新 -->
@@ -40,7 +40,7 @@
             <h3>ユーザー情報更新</h3>
             <iframe id='user-update'
                 style="border: none; width: 100%; height: 350px;"
-                src="{{ .Site.BaseURL }}iframe/update-user-form.html">
+                src="{{"iframe/update-user-form.html" | relURL }}">
             </iframe>
         </div>
         <!-- アカウント削除 -->
@@ -48,15 +48,16 @@
             <h3>ユーザー削除</h3>
             <iframe id='user-delete'
                 style="border: none; width: 100%; height: 350px;"
-                src="{{ .Site.BaseURL }}iframe/delete-user-form.html">
+                src="{{"iframe/delete-user-form.html" | relURL }}">
             </iframe>
         </div>
     </div>
 </div>
 {{ end }}
 {{ define "scripts" }}
-    <script defer src="{{ .Site.BaseURL }}js/user-create.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/user-update.js"></script>
-    <script defer src="{{ .Site.BaseURL }}js/user-delete.js"></script>
+    <script defer src="{{ "js/admin.js" | relURL }}"></script>
+    <script defer src="{{ "js/user-create.js" | relURL }}"></script>
+    <script defer src="{{ "js/user-update.js" | relURL }}"></script>
+    <script defer src="{{ "js/user-delete.js" | relURL }}"></script>
 {{ end }}
 {{ .Content }}
