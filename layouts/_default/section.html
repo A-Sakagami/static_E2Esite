@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ .Title }}</title>
-</head>
-<body>
+{{ define "main" }}
     <h2>{{ .Title }}</h2>
+    <p>{{ .Layout }}</p>
+    {{ .Content }} <!-- Markdown本文 (_index.md) を表示 -->
     {{ range .Pages }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     {{ end }}
-</body>
-</html>
+{{ end }}
+
