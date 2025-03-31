@@ -13,6 +13,13 @@ publishDir = 'public'
   showHeader = true
   loggedIn = true
 
+[mediaTypes]
+  [mediaTypes."application/javascript"]
+    suffixes = ["js"]
+
+[outputFormats.HTML]
+  mediaType = "text/html"
+
 [permalinks]
   about = "/about/"
   contact = "/contact/"

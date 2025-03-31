@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <title>ユーザー登録フォーム</title>
   <style>
     .form-container {
         display: flex;
@@ -37,19 +38,20 @@
   </style>
 </head>
 <body>
-    <form id="createUserForm" class="form-container">
+    <form id="createUserForm" class="form-container" action="javascript:void(0);">
         <label for="role">ユーザー種別: </label>
         <div>
-            <input type="radio" id="admin" name="role" value="admin" required>
+            <input type="radio" id="admin" name="role" value="admin">
             <label for="admin">管理者</label>
-            <input type="radio" id="user" name="role" value="user" required>
+            <input type="radio" id="user" name="role" value="user" checked>
             <label for="user">一般ユーザー</label>
         </div>
         <label for="username">ユーザー名: </label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username">
         <label for="password">パスワード: </label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password">
         <button type="submit" style="margin-top: 20px">登録 </button>
     </form>
+    <script src="/js/user-create.js" defer></script>
 </body>
 </html>
