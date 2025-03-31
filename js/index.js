@@ -12,7 +12,7 @@ function initializeUserView() {
     const loginScreen = getElement("login-screen");
     const userArea = getElement("user-area");
     const postList = getElement("post-list");
-    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || [{ userType: "" }];
+    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || { userType: "" };
 
     switch (currentUser.userType) {
         case "admin":
