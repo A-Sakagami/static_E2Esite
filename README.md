@@ -1,5 +1,12 @@
 # static_E2Esite
 テスト自動化用E2Eサイト
+<p><img src="https://img.shields.io/badge/-githubpages-000000.svg?logo=githubpages&style=for-the-badge"></img>,
+<img src="https://img.shields.io/badge/-githubactions-000000.svg?logo=githubactions&style=for-the-badge"></img>,
+<img src="https://img.shields.io/badge/-hugo-000000.svg?logo=hugo&style=for-the-badge"></img>,
+<img src="https://img.shields.io/badge/-html5-000000.svg?logo=html5&style=for-the-badge"></img>,
+<img src="https://img.shields.io/badge/-css-000000.svg?logo=css&style=for-the-badge"></img>,
+<img src="https://img.shields.io/badge/-markdown-000000.svg?logo=markdown&style=for-the-badge"></img>
+<img src="https://img.shields.io/badge/-javascript-000000.svg?logo=javascript&style=for-the-badge"></img></p>
 
 ## ディレクトリ構造
 
